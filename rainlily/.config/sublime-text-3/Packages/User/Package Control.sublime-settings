@@ -1,0 +1,19 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Codecs33",
+		"ConvertToUTF8",
+		"Emoji",
+		"i3 wm",
+		"INI",
+		"Javascript Beautify",
+		"Materialize",
+		"Package Control",
+		"Theme - Monokai Pro",
+		"Theme - Solarized Flat"
+	],
+}

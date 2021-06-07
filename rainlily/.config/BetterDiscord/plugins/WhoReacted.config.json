@@ -1,0 +1,15 @@
+{
+    "currentVersionInfo": {
+        "version": "1.2.3",
+        "hasShownChangelog": true
+    },
+    "settings": {
+        "maxUsersShown": 6,
+        "avatarSize": 16,
+        "reactionThreshold": 10,
+        "userThreshold": 100,
+        "useHighestUserCount": true,
+        "showSelf": true,
+        "showBots": true
+    }
+}

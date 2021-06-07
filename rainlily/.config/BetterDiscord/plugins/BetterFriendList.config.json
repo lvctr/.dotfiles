@@ -1,0 +1,17 @@
+{
+	"changelog": {
+		"currentversion": "1.2.9"
+	},
+	"general": {
+		"addTotalAmount": true,
+		"addSortOptions": true,
+		"addSearchbar": true,
+		"addMutualGuild": true
+	},
+	"settings": {
+		"addMutualGuild": true,
+		"addSearchbar": true,
+		"addSortOptions": true,
+		"addTotalAmount": true
+	}
+}

@@ -1,0 +1,11 @@
+{
+	"color_scheme": "Packages/Materialize/schemes/Material Solarized Dark.tmTheme",
+	"font_face": "Source Han Code JP",
+	"font_size": 11,
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"overlay_scroll_bars": "disabled",
+	"theme": "Material Solarized Dark.sublime-theme",
+}

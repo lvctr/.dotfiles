@@ -1,0 +1,12 @@
+{
+	"amounts": {
+		"maxFileSize": 10
+	},
+	"changelog": {
+		"currentversion": "1.0.6"
+	},
+	"settings": {
+		"onDemand": false,
+		"addOpenButton": true
+	}
+}
