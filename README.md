@@ -17,7 +17,6 @@ This is mainly just for me so that I have a documentation of everything I use, b
 | **SSD2** | WD Blue 1TB | 
 | **SSD3** | Samsung 860 EVO 1TB | 
 | **HDDs** | Toshiba 1TB 5400RPM |
-|  |  |
 
 ## ENVIRONMENT
 
@@ -42,7 +41,6 @@ I am also using the `powerlevel10k` theme.
 | **menu** | `rofi` |
 | **bg** | `feh` |
 | **ime** | `fcitx5-gtk` |
-|||
 
 ### PROGRAMS
 |||
@@ -52,7 +50,6 @@ I am also using the `powerlevel10k` theme.
 | **editor** | `sublime-text` |
 | **images** | `gpicview` |
 | **video** | `mpv-full` with `svp` |
-|||
 
 ### AUDIO
 
@@ -84,6 +81,5 @@ In order to play video games and use Photoshop on my system, I have my guest GPU
 | **environment** | - | qemu/kvm managed with `virt-manager` |
 | **video** | `looking-glass` ||
 | **audio**| - | JACK routing is natively supported by `libvirt` |
-||||
 
 This part of the document is incomplete.
