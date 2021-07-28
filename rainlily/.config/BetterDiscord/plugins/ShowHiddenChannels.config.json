@@ -17,9 +17,8 @@
 		"GUILD_STAGE_VOICE": true
 	},
 	"general": {
-		"sortNative": true,
-		"showVoiceUsers": true,
 		"alwaysCollapse": false,
+		"showVoiceUsers": true,
 		"showForNormal": true
 	},
 	"settings": {
@@ -29,5 +28,8 @@
 		"showText": true,
 		"showVoice": true,
 		"sortNative": false
+	},
+	"sortOrder": {
+		"hidden": "native"
 	}
 }

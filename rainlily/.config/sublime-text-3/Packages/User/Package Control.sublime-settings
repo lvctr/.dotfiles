@@ -6,6 +6,7 @@
 	"installed_packages":
 	[
 		"Codecs33",
+		"Color Highlight",
 		"ConvertToUTF8",
 		"Emoji",
 		"i3 wm",
@@ -14,6 +15,6 @@
 		"Materialize",
 		"Package Control",
 		"Theme - Monokai Pro",
-		"Theme - Solarized Flat"
+		"Theme - Solarized Flat",
 	],
 }

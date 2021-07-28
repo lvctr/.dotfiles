@@ -18,5 +18,7 @@ for i in /sys/class/hwmon/hwmon*/temp*_input; do
 done
 
 # Launch bar1 and bar2
-polybar main -c ~/.config/polybar/config.ini &
-polybar sub -c ~/.config/polybar/config.ini &
+polybar sub-top -c ~/.config/polybar/config.ini &
+polybar main-bottom -c ~/.config/polybar/config.ini &
+polybar portrait-top -c ~/.config/polybar/config.ini &
+polybar portrait-bottom -c ~/.config/polybar/config.ini &

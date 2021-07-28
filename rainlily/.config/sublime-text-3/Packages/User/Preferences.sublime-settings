@@ -8,4 +8,5 @@
 	],
 	"overlay_scroll_bars": "disabled",
 	"theme": "Material Solarized Dark.sublime-theme",
+	"original_color_scheme": "Packages/Materialize/schemes/Material Solarized Dark.tmTheme",
 }

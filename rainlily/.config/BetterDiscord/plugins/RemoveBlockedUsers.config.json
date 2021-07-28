@@ -19,7 +19,9 @@
 		"autocompletes": true,
 		"memberList": true,
 		"voiceList": true,
-		"voiceChat": true
+		"voiceChat": true,
+		"channelList": true,
+		"recentDms": true
 	},
 	"settings": {
 		"disableNotifications": true,

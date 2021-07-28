@@ -1,6 +1,6 @@
 /**
  * @name ZeresPluginLibrary
- * @version 1.2.29
+ * @version 1.2.31
  * @invite TyFxKer
  * @authorLink https://twitter.com/ZackRauen
  * @donate https://paypal.me/ZackRauen
@@ -11,25 +11,25 @@
 
 /*@cc_on
 @if (@_jscript)
-	
-	// Offer to self-install for clueless users that try to run this directly.
-	var shell = WScript.CreateObject("WScript.Shell");
-	var fs = new ActiveXObject("Scripting.FileSystemObject");
-	var pathPlugins = shell.ExpandEnvironmentStrings("%APPDATA%\BetterDiscord\plugins");
-	var pathSelf = WScript.ScriptFullName;
-	// Put the user at ease by addressing them in the first person
-	shell.Popup("It looks like you've mistakenly tried to run me directly. \n(Don't do that!)", 0, "I'm a plugin for BetterDiscord", 0x30);
-	if (fs.GetParentFolderName(pathSelf) === fs.GetAbsolutePathName(pathPlugins)) {
-		shell.Popup("I'm in the correct folder already.", 0, "I'm already installed", 0x40);
-	} else if (!fs.FolderExists(pathPlugins)) {
-		shell.Popup("I can't find the BetterDiscord plugins folder.\nAre you sure it's even installed?", 0, "Can't install myself", 0x10);
-	} else if (shell.Popup("Should I copy myself to BetterDiscord's plugins folder for you?", 0, "Do you need some help?", 0x34) === 6) {
-		fs.CopyFile(pathSelf, fs.BuildPath(pathPlugins, fs.GetFileName(pathSelf)), true);
-		// Show the user where to put plugins in the future
-		shell.Exec("explorer " + pathPlugins);
-		shell.Popup("I'm installed!", 0, "Successfully installed", 0x40);
-	}
-	WScript.Quit();
+    
+    // Offer to self-install for clueless users that try to run this directly.
+    var shell = WScript.CreateObject("WScript.Shell");
+    var fs = new ActiveXObject("Scripting.FileSystemObject");
+    var pathPlugins = shell.ExpandEnvironmentStrings("%APPDATA%\\BetterDiscord\\plugins");
+    var pathSelf = WScript.ScriptFullName;
+    // Put the user at ease by addressing them in the first person
+    shell.Popup("It looks like you've mistakenly tried to run me directly. \n(Don't do that!)", 0, "I'm a plugin for BetterDiscord", 0x30);
+    if (fs.GetParentFolderName(pathSelf) === fs.GetAbsolutePathName(pathPlugins)) {
+        shell.Popup("I'm in the correct folder already.", 0, "I'm already installed", 0x40);
+    } else if (!fs.FolderExists(pathPlugins)) {
+        shell.Popup("I can't find the BetterDiscord plugins folder.\nAre you sure it's even installed?", 0, "Can't install myself", 0x10);
+    } else if (shell.Popup("Should I copy myself to BetterDiscord's plugins folder for you?", 0, "Do you need some help?", 0x34) === 6) {
+        fs.CopyFile(pathSelf, fs.BuildPath(pathPlugins, fs.GetFileName(pathSelf)), true);
+        // Show the user where to put plugins in the future
+        shell.Exec("explorer " + pathPlugins);
+        shell.Popup("I'm installed!", 0, "Successfully installed", 0x40);
+    }
+    WScript.Quit();
 
 @else@*/
 module.exports =
@@ -137,19 +137,20 @@ module.exports = {
             github_username: "rauenzi",
             twitter_username: "ZackRauen"
         }],
-        version: "1.2.29",
+        version: "1.2.31",
         description: "Gives other plugins utility functions and the ability to emulate v2.",
         github: "https://github.com/rauenzi/BDPluginLibrary",
         github_raw: "https://raw.githubusercontent.com/rauenzi/BDPluginLibrary/master/release/0PluginLibrary.plugin.js"
     },
     changelog: [
         {
-            title: "Internal Changes",
+            title: "Fixed Plugin Updates",
             type: "fixed",
             items: [
-                "Changes how elements and jQuery are resolved internally that could cause crashes when jQuery doesn't exist.",
+                "Fixed plugin updates to stop them crashing Discord.",
+                "Fixed confirmation modal button color."
             ]
-        },
+        }
     ],
     main: "plugin.js"
 };
@@ -607,6 +608,7 @@ __webpack_require__.r(__webpack_exports__);
     /* Current User Info, State and Settings */
     get UserInfoStore() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByProps("getSessionId");},
     get UserSettingsStore() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByProps("guildPositions");},
+    get StreamerModeStore() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByProps("hidePersonalInformation");},
     // Not really needed by plugins
     // get AccountManager() {return WebpackModules.getByProps("register", "login");},
     get UserSettingsUpdater() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByProps("updateRemoteSettings");},
@@ -650,6 +652,7 @@ __webpack_require__.r(__webpack_exports__);
 
     /* Discord Messages */
     get MessageStore() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByProps("getMessages");},
+    get ReactionsStore() {return  _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByProps("getReactions", "_dispatcher");},
     get MessageActions() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByProps("jumpToMessage", "_sendMessage");},
     get MessageQueue() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByProps("enqueue");},
     get MessageParser() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getModule(m => Object.keys(m).length && Object.keys(m).every(k => k === "parse" || k === "unparse"));},
@@ -681,6 +684,7 @@ __webpack_require__.r(__webpack_exports__);
 
     /* Electron & Other Internals with Utils*/
     get ElectronModule() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByProps("setBadge");},
+    get Flux() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByProps("Store", "connectStores");},
     get Dispatcher() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByProps("dirtyDispatch");},
     get PathUtils() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByProps("hasBasename");},
     get NotificationModule() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByProps("showNotification");},
@@ -691,6 +695,7 @@ __webpack_require__.r(__webpack_exports__);
     get Buffers() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByProps("Buffer", "kMaxLength");},
     get DeviceStore() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByProps("getDevices");},
     get SoftwareInfo() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByProps("os");},
+    get i18n() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByProps("Messages", "languages");},
     // Absorbed into Sentry
     // get CurrentContext() {return WebpackModules.getByProps("setTagsContext");},
 
@@ -775,7 +780,7 @@ __webpack_require__.r(__webpack_exports__);
     get PopoutOpener() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByProps("openPopout");},
     // Grab with react components
     // get EmojiPicker() {return WebpackModules.getByDisplayName("FluxContainer(EmojiPicker)");},
-    get UserPopout() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByDisplayName("ConnectedUserPopout");},
+    get UserPopout() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getModule(m => m.type.displayName === "UserPopoutContainer");},
 
     /* Context Menus */
     get ContextMenuActions() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByProps("openContextMenu");},
@@ -785,8 +790,27 @@ __webpack_require__.r(__webpack_exports__);
     /* Misc */
     get ExternalLink() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByRegex(/trusted/);},
     get TextElement() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByDisplayName("Text");},
+    get Anchor() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByDisplayName("Anchor");},
+    get Flex() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByDisplayName("Flex");},
     get FlexChild() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByProps("Child");},
+    get Clickable() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByDisplayName("Clickable");},
     get Titles() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByProps("Tags", "default");},
+    get HeaderBar() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByDisplayName("HeaderBar");},
+    get TabBar() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByDisplayName("TabBar");},
+    get Tooltip() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByProps("TooltipContainer").TooltipContainer;},
+    get Spinner() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByDisplayName("Spinner");},
+
+    /* Forms */
+    get FormTitle() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByDisplayName("FormTitle");},
+    get FormSection() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByDisplayName("FormSection");},
+    get FormNotice() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByDisplayName("FormNotice");},
+
+    /* Scrollers */
+    get ScrollerThin() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByProps("ScrollerThin").ScrollerThin;},
+    get ScrollerAuto() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByProps("ScrollerAuto").ScrollerAuto;},
+    get AdvancedScrollerThin() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByProps("AdvancedScrollerThin").AdvancedScrollerThin;},
+    get AdvancedScrollerAuto() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByProps("AdvancedScrollerAuto").AdvancedScrollerAuto;},
+    get AdvancedScrollerNone() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByProps("AdvancedScrollerNone").AdvancedScrollerNone;},
 
     /* Settings */
     get SettingsWrapper() {return _webpackmodules__WEBPACK_IMPORTED_MODULE_1__["default"].getByDisplayName("FormItem");},
@@ -2420,9 +2444,9 @@ __webpack_require__.r(__webpack_exports__);
         if (process.env.injDir) return path.resolve(process.env.injDir, subtarget);
         switch (process.platform) {
             case "win32":
-                return path.resolve(process.env.appdata, "BetterDiscord/", subtarget);
+                return path.resolve(process.env.APPDATA, "BetterDiscord/", subtarget);
             case "darwin":
-                return path.resolve(process.env.HOME, "Library/Preferences/", "BetterDiscord/", subtarget);
+                return path.resolve(process.env.HOME, "Library/Application Support/", "BetterDiscord/", subtarget);
             default:
                 return path.resolve(process.env.XDG_CONFIG_HOME ? process.env.XDG_CONFIG_HOME : process.env.HOME + "/.config", "BetterDiscord/", subtarget);
         }
@@ -7637,7 +7661,7 @@ class Modals {
         return modules__WEBPACK_IMPORTED_MODULE_0__["DiscordModules"].ModalActions.openModal(props => {
             return React.createElement(modules__WEBPACK_IMPORTED_MODULE_0__["DiscordModules"].ConfirmationModal, Object.assign({
                 header: title,
-                red: danger,
+                confirmButtonColor: danger ? modules__WEBPACK_IMPORTED_MODULE_0__["DiscordModules"].ButtonData.ButtonColors.RED : modules__WEBPACK_IMPORTED_MODULE_0__["DiscordModules"].ButtonData.ButtonColors.BRAND,
                 confirmText: confirmText,
                 cancelText: cancelText,
                 onConfirm: onConfirm,
@@ -8444,6 +8468,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /**
+ * Used to render the marker.
+ * @param {Number} value - The value to render
+ * @returns {string} the text to show in the marker
+ * @callback module:Settings~SliderMarkerValue
+ */
+
+/**
  * Used to render the grabber tooltip.
  * @param {Number} value - The value to render
  * @returns {string} the text to show in the tooltip
@@ -8468,9 +8499,13 @@ class Slider extends _settingfield__WEBPACK_IMPORTED_MODULE_0__["default"] {
     * @param {object} [options] - object of options to give to the setting
     * @param {boolean} [options.disabled=false] - should the setting be disabled
     * @param {object} [options.fillStyles] - object of css styles to add to active slider
+    * @param {number} [options.defaultValue] - value highlighted as default
+    * @param {number} [options.keyboardStep] - step moved when using arrow keys
     * @param {Array<number>} [options.markers] - array of vertical markers to show on the slider
     * @param {boolean} [options.stickToMarkers] - should the slider be forced to use markers
     * @param {boolean} [options.equidistant] - should the markers be scaled to be equidistant
+    * @param {module:Settings~SliderMarkerValue} [options.onMarkerRender] - function to call to render the value in the marker
+    * @param {module:Settings~SliderMarkerValue} [options.renderMarker] - alias of `onMarkerRender`
     * @param {module:Settings~SliderRenderValue} [options.onValueRender] - function to call to render the value in the tooltip
     * @param {module:Settings~SliderRenderValue} [options.renderValue] - alias of `onValueRender`
     * @param {string} [options.units] - can be used in place of `onValueRender` will use this string and render Math.round(value) + units
@@ -8485,10 +8520,17 @@ class Slider extends _settingfield__WEBPACK_IMPORTED_MODULE_0__["default"] {
             handleSize: 10
         };
         if (options.fillStyles) props.fillStyles = options.fillStyles;
+        if (typeof(options.defaultValue) !== 'undefined') props.defaultValue = options.defaultValue;
+        if (options.keyboardStep) props.keyboardStep = options.keyboardStep;
         if (options.markers) props.markers = options.markers;
         if (options.stickToMarkers) props.stickToMarkers = options.stickToMarkers;
         if (typeof(options.equidistant) != "undefined") props.equidistant = options.equidistant;
-        if (options.units) props.onValueRender = (val) => `${Math.round(val)}${options.units}`;
+        if (options.units) {
+            const renderValueLabel = (val) => `${Math.round(val)}${options.units}`;
+            props.onMarkerRender = renderValueLabel;
+            props.onValueRender = renderValueLabel;
+        }
+        if (options.onMarkerRender || options.renderMarker) props.onMarkerRender = options.onMarkerRender || options.renderMarker;
         if (options.onValueRender || options.renderValue) props.onValueRender = options.onValueRender || options.renderValue;
         super(name, note, onChange, modules__WEBPACK_IMPORTED_MODULE_1__["DiscordModules"].Slider, Object.assign(props, {onValueChange: v => this.onChange(v)}));
     }

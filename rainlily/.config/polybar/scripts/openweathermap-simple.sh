@@ -42,7 +42,7 @@ get_icon() {
 }
 
 KEY="9240f270f372ea97bb49f75409940063"
-CITY="1850147"
+CITY="1860827"
 UNITS="metric"
 SYMBOL="°C"
 
