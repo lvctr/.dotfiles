@@ -2,7 +2,7 @@
  * @name ThemeRepo
  * @author DevilBro
  * @authorId 278543574059057154
- * @version 2.2.6
+ * @version 2.2.7
  * @description Allows you to download all Themes from BD's Website within Discord
  * @invite Jx3TjNS
  * @donate https://www.paypal.me/MircoWittrien
@@ -17,7 +17,7 @@ module.exports = (_ => {
 		"info": {
 			"name": "ThemeRepo",
 			"author": "DevilBro",
-			"version": "2.2.6",
+			"version": "2.2.7",
 			"description": "Allows you to download all Themes from BD's Website within Discord"
 		}
 	};
@@ -151,7 +151,8 @@ module.exports = (_ => {
 				if (!this.props.downloadable)	themes = themes.filter(theme => theme.state != themeStates.DOWNLOADABLE);
 				if (searchString) 	{
 					let usedSearchString = searchString.toUpperCase();
-					themes = themes.filter(theme => theme.search.indexOf(usedSearchString) > -1);
+					let spacelessUsedSearchString = usedSearchString.replace(/\s/g, "");
+					themes = themes.filter(theme => theme.search.indexOf(usedSearchString) > -1 || theme.search.indexOf(spacelessUsedSearchString) > -1);
 				}
 				
 				BDFDB.ArrayUtils.keySort(themes, this.props.sortKey.toLowerCase());
@@ -258,6 +259,7 @@ module.exports = (_ => {
 						classes: JSON.stringify(BDFDB.DiscordClasses),
 						classModules: JSON.stringify(BDFDB.DiscordClassModules),
 						nativeCSS: (nativeCSS || "").replace(/\/assets\//g, document.location.origin + "/assets/").replace(/[\t\r\n]/g, ""),
+						bdCSS: (document.querySelector("#bd-stylesheet") || {}).innerText || "",
 						htmlClassName: document.documentElement.className,
 						titleBar: titleBar && titleBar.outerHTML || ""
 					});

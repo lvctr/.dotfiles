@@ -10,6 +10,10 @@ super + Return
 super + d
 	rofi -show drun
 
+# windows
+super + w
+	rofi -show window
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
@@ -42,9 +46,9 @@ super + g
 # state/flags
 #
 
-# set the window state
-# super + {t,shift + t,s,f}
-#	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+# toggle floating/tiled/fullscreen
+super + shift + f
+	bspc node -t \~{floating,tiled,fullscreen}
 
 # set the node flags
 super + ctrl + {m,x,y,z}

@@ -1,33 +1,41 @@
 /**
- * @name SendLargeMessages
+ * @name SplitLargeMessages
  * @author DevilBro
  * @authorId 278543574059057154
- * @version 1.6.8
+ * @version 1.7.0
  * @description Allows you to enter larger Messages, which will automatically split into several smaller Messages
  * @invite Jx3TjNS
  * @donate https://www.paypal.me/MircoWittrien
  * @patreon https://www.patreon.com/MircoWittrien
  * @website https://mwittrien.github.io/
- * @source https://github.com/mwittrien/BetterDiscordAddons/tree/master/Plugins/SendLargeMessages/
- * @updateUrl https://mwittrien.github.io/BetterDiscordAddons/Plugins/SendLargeMessages/SendLargeMessages.plugin.js
+ * @source https://github.com/mwittrien/BetterDiscordAddons/tree/master/Plugins/SplitLargeMessages/
+ * @updateUrl https://mwittrien.github.io/BetterDiscordAddons/Plugins/SplitLargeMessages/SplitLargeMessages.plugin.js
  */
 
 module.exports = (_ => {
 	const config = {
 		"info": {
-			"name": "SendLargeMessages",
+			"name": "SplitLargeMessages",
 			"author": "DevilBro",
-			"version": "1.6.8",
+			"version": "1.7.0",
 			"description": "Allows you to enter larger Messages, which will automatically split into several smaller Messages"
 		},
 		"changeLog": {
 			"improved": {
-				"Nitro Max Message Length": "Now uses 4000 as Max Limit when the user has the permissions to"
+				"Threads": "Works flawlessly with Threads now"
 			}
 		}
 	};
 
-	return !window.BDFDB_Global || (!window.BDFDB_Global.loaded && !window.BDFDB_Global.started) ? class {
+	return (window.Lightcord || window.LightCord) ? class {
+		getName () {return config.info.name;}
+		getAuthor () {return config.info.author;}
+		getVersion () {return config.info.version;}
+		getDescription () {return "Do not use LightCord!";}
+		load () {BdApi.alert("Attention!", "By using LightCord you are risking your Discord Account, due to using a 3rd Party Client. Switch to an official Discord Client (https://discord.com/) with the proper BD Injection (https://betterdiscord.app/)");}
+		start() {}
+		stop() {}
+	} : !window.BDFDB_Global || (!window.BDFDB_Global.loaded && !window.BDFDB_Global.started) ? class {
 		getName () {return config.info.name;}
 		getAuthor () {return config.info.author;}
 		getVersion () {return config.info.version;}
@@ -68,7 +76,7 @@ module.exports = (_ => {
 		const messageDelay = 1000; //changing at own risk, might result in bans or mutes
 		let maxMessageLength = 2000;
 	
-		return class SendLargeMessages extends Plugin {
+		return class SplitLargeMessages extends Plugin {
 			onLoad () {
 				this.defaults = {
 					general: {
@@ -126,16 +134,14 @@ module.exports = (_ => {
 			}
 
 			processChannelTextAreaForm (e) {
-				if (!BDFDB.PatchUtils.isPatched(this, e.instance, "handleSendMessage")) BDFDB.PatchUtils.patch(this, e.instance, "handleSendMessage", {instead: e2 => {
+				BDFDB.PatchUtils.patch(this, e.instance, "handleSendMessage", {instead: e2 => {
 					if (e2.methodArguments[0].length > maxMessageLength) {
 						e2.stopOriginalMethodCall();
-						let messages = this.formatText(e2.methodArguments[0]);
-						messages.filter(n => n).forEach((message, i) => {
-							BDFDB.TimeUtils.timeout(_ => {
-								e2.originalMethod(message);
-								if (i >= messages.length-1) BDFDB.NotificationUtils.toast(this.labels.toast_allsent, {type: "success"});
-							}, messageDelay * i);
-						});
+						let messages = this.formatText(e2.methodArguments[0]).filter(n => n);
+						for (let i in messages) BDFDB.TimeUtils.timeout(_ => {
+							e2.originalMethod(messages[i]);
+							if (i >= messages.length-1) BDFDB.NotificationUtils.toast(this.labels.toast_allsent, {type: "success"});
+						}, messageDelay * i * (messages > 4 ? 2 : 1));
 						return Promise.resolve({
 							shouldClear: true,
 							shouldRefocus: true
@@ -146,7 +152,7 @@ module.exports = (_ => {
 			}
 			
 			processChannelTextAreaContainer (e) {
-				if (e.instance.props.type == BDFDB.DiscordConstants.TextareaTypes.NORMAL) {
+				if (e.instance.props.type == BDFDB.DiscordConstants.TextareaTypes.NORMAL || e.instance.props.type == BDFDB.DiscordConstants.TextareaTypes.SIDEBAR) {
 					let [children, index] = BDFDB.ReactUtils.findParent(e.returnvalue, {name: "SlateCharacterCount"});
 					if (index > -1) {
 						let text = BDFDB.LibraryModules.SlateSelectionUtils.serialize(children[index].props.document, "raw");
@@ -164,7 +170,7 @@ module.exports = (_ => {
 			}
 
 			processChannelEditorContainer (e) {
-				if (e.instance.props.type == BDFDB.DiscordConstants.TextareaTypes.NORMAL) e.instance.props.shouldUploadLongMessages = false;
+				if (e.instance.props.type == BDFDB.DiscordConstants.TextareaTypes.NORMAL || e.instance.props.type == BDFDB.DiscordConstants.TextareaTypes.SIDEBAR) e.instance.props.shouldUploadLongMessages = false;
 			}
 
 			formatText (text) {

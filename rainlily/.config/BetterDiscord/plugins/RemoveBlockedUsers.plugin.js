@@ -2,7 +2,7 @@
  * @name RemoveBlockedUsers
  * @author DevilBro
  * @authorId 278543574059057154
- * @version 1.3.1
+ * @version 1.3.3
  * @description Removes blocked Messages/Users
  * @invite Jx3TjNS
  * @donate https://www.paypal.me/MircoWittrien
@@ -17,13 +17,8 @@ module.exports = (_ => {
 		"info": {
 			"name": "RemoveBlockedUsers",
 			"author": "DevilBro",
-			"version": "1.3.1",
+			"version": "1.3.3",
 			"description": "Removes blocked Messages/Users"
-		},
-		"changeLog": {
-			"fixed": {
-				"Voice Channels": ""
-			}
 		}
 	};
 
