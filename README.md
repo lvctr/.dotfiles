@@ -8,7 +8,7 @@ This is mainly just for me so that I have a documentation of everything I use, b
 |--|--|--|--|
 | **Class** | Desktop | Laptop | Laptop
 | **Model** | | Lenovo Legion 5 15 | Dell XPS 13 9360
-| **OS** | Arch Linux (VFIO Windows) | Windows (for now) | Arch Linux
+| **OS** | Arch Linux (VFIO Windows) | Arch Linux | Arch Linux
 | **CPU** | AMD Ryzen 7 5800X | AMD Ryzen 7 4800H | Intel Core i5 7200U
 | **Host GPU** | AMD Radeon RX 550 | AMD Radeon Vega 7 | Intel HD Graphics 620
 | **Guest GPU** | AMD Radeon RX 6800 XT | Nvidia GeForce GTX 1650Ti
@@ -40,13 +40,13 @@ I am also using the `powerlevel10k` theme.
 | **notifs** | `dunst` |
 | **menu** | `rofi` |
 | **bg** | `feh` |
-| **ime** | `fcitx5-gtk` |
+| **ime** | `fcitx5-mozc` |
 
 ### PROGRAMS
 |||
 |--|--|
 | **term** | `kitty` |
-| **fm** | `pcmanfm` |
+| **fm** | `thunar` |
 | **editor** | `sublime-text` |
 | **images** | `gpicview` |
 | **video** | `mpv-full` with `svp` |
@@ -62,7 +62,7 @@ and manage devices with `pavucontrol` for PulseAudio and `qjackctl` for JACK.
 
 ### CHAT
 
-Mainly use `discord` with `betterdiscordctl-git` to chat, with the following plugins:
+Mainly use `discord` with `betterdiscord-installer` to chat, with the following plugins:
 
 - to do
 - theres so many lmao
@@ -71,6 +71,8 @@ Mainly use `discord` with `betterdiscordctl-git` to chat, with the following plu
 ### OTHERS
 - `openrgb-git` for RGB control
 - `liquitctl` for AIO control
+- `earlyoom` for OOM management
+- `tlp` and `autosuspend` for battery management
 
 ### VFIO
 
