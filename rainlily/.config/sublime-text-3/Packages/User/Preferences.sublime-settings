@@ -1,7 +1,8 @@
 {
 	"color_scheme": "Packages/Materialize/schemes/Material Solarized Dark.tmTheme",
-	"font_face": "Source Han Code JP",
+	"font_face": "FiraCode Nerd Font Mono",
 	"font_size": 11,
+	/*"font_options": ["gray_antialias", "subpixel_antialias", "ss01", "ss02", "ss03", "ss04", "ss05", "ss06", "ss07"],*/
 	"ignored_packages":
 	[
 		"Vintage",

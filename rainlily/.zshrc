@@ -81,9 +81,10 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
 	archlinux
 	git
+	sudo
 	zsh-autosuggestions
 	zsh-completions
-    	zsh-syntax-highlighting
+ 	zsh-syntax-highlighting
 )
 
 autoload -U compinit && compinit
@@ -133,11 +134,14 @@ updot () {git add -A && git commit -m "$@" && git push &}
 # Aliases
 # alias upload-dotfiles="git add -A && git commit -m 'Update dotfiles' && git push"
 alias caffeine="xset -dpms && xset s off"
-alias larkspur="kitty +kitten ssh insti@192.168.1.102"
+alias larkspur="kitty +kitten ssh insti@192.168.0.102"
 alias :q="exit"
 
-export MAKEOPTS='-j6'
-export MAKEFLAGS='-j6'
+export MAKEOPTS='-j16'
+export MAKEFLAGS='-j16'
 
-alias runscream="killall scream && scream -o alsa -i virbr0 &"
-alias lg="looking-glass-client -s -F -m 226 win:noScreensaver no win:minimizeOnFocusLoss no"
+alias lg="looking-glass-client -m 194 -F win:noScreensaver=no win:minimizeOnFocusLoss=no"
+
+# export PATH=/home/insti/.local/share/gem/ruby/3.0.0/bin:$PATH
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"

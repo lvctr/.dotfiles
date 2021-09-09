@@ -8,11 +8,11 @@ super + Return
 
 # program launcher
 super + d
-	rofi -show drun
+	rofi -theme config -show drun
 
 # windows
 super + w
-	rofi -show window
+	rofi -theme config -show window
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -140,6 +140,7 @@ XF86MonBrightnessDown
 # apps
 super + f
 	firefox
+#	fd --hidden | rofi -dmenu -i -p "fd" -keep-right | xargs xdg-open
 
 # Screenshots
 # ctrl + shift + x
