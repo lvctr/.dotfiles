@@ -1,0 +1,40 @@
+#! /bin/sh
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+bspc wm -O eDP
+
+bspc monitor eDP -d 1 2 3 4 5 6 7 8 9
+bspc monitor HDMI-1-0 -d 0
+
+bspc config border_width         1
+bspc config window_gap          15
+
+bspc config focused_border_color \#2aa198
+bspc config normal_border_color \#93a1a1
+bspc config active_border_color \#93a1a1
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+bspc config focus_follows_pointer true
+
+bspc rule -a Screenkey manage=off
+
+# Startup
+# xss-lock -- dm-tool switch-to-greeter &
+killall picom
+picom -b --experimental-backends &
+feh --bg-fill /home/insti/Pictures/Wallpaper/wallpaper.jpg &
+$HOME/.config/polybar/launch.sh &
+xmousepasteblock &
+thunar -daemon &
+fcitx5 &
+dunst &
+libinput-gestures &
+nm-applet --indicator &
+kdeconnect-indicator &
+rclone --vfs-cache-mode writes mount "onedrive":  ~/OneDrive &
+
+# Startup apps
+discord --start-minimized &
+slack -u &
