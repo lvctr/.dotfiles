@@ -19,7 +19,7 @@
     <vcpupin vcpu='5' cpuset='14'/>
     <vcpupin vcpu='6' cpuset='7'/>
     <vcpupin vcpu='7' cpuset='15'/>
-    <emulatorpin cpuset='1-2,9-10'/>
+    <emulatorpin cpuset='3,11'/>
     <iothreadpin iothread='1' cpuset='3,11'/>
   </cputune>
   <os>
