@@ -14,6 +14,10 @@ super + d
 super + w
 	rofi -theme config -show window
 
+# notifications
+super + n
+	kill -s USR1 $(pidof deadd-notification-center) 
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
@@ -133,9 +137,9 @@ XF86AudioMute
 	pactl set-sink-mute 0 toggle
 
 XF86MonBrightnessUp
-	brightnessctl -s s +10%
+	brightnessctl -d amdgpu_bl0 -s s +10%
 XF86MonBrightnessDown
-	brightnessctl -s s 10%-
+	brightnessctl -d amdgpu_bl0 -s s 10%-
 
 # apps
 super + f
@@ -156,8 +160,8 @@ ctrl + shift + z
 	gscreenshot -c
 
 # up down left right with altgr
-# mode_switch + {s,d,e,f}
-#	xdotool key {Left,Down,Up,Right}
+mode_switch + {s,d,e,f}
+	xdotool key {Left,Down,Up,Right}
 
-mode_switch + s
-	xdotool key Left
+# Alt_R + s
+# 	xdotool key Left

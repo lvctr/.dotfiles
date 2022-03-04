@@ -143,6 +143,7 @@ export MAKEOPTS='-j16'
 export MAKEFLAGS='-j16'
 
 alias lg="looking-glass-client -m 194 -F win:noScreensaver=no win:minimizeOnFocusLoss=no"
+alias desktop=/home/insti/.scripts/change_desktop.sh
 
 # export PATH=/home/insti/.local/share/gem/ruby/3.0.0/bin:$PATH
 export PATH="$HOME/.rbenv/bin:$PATH"

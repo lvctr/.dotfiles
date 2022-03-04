@@ -29,7 +29,7 @@ $HOME/.config/polybar/launch.sh &
 xmousepasteblock &
 thunar -daemon &
 fcitx5 &
-dunst &
+deadd-notification-center &
 libinput-gestures &
 nm-applet --indicator &
 kdeconnect-indicator &

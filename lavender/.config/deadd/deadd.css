@@ -1,0 +1,145 @@
+
+/* Notification center */
+
+.blurredBG, #main_window, .blurredBG.low, .blurredBG.normal {
+    background: #002b36;
+    border:  1px solid #2aa198;
+}
+
+.noti-center.time {
+    font-size: 0px;
+    opacity: 0;
+}
+
+label.deadd-noti-center.date {
+    font-size: 0px;
+    opacity: 0;
+}
+
+/* Notifications */
+
+.title {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.appname {
+    font-size: 12px;
+}
+
+.time {
+    font-size: 12px;
+}
+
+.blurredBG.notification {
+    background:  #002b36;
+}
+
+/*.notificationInCenter {
+    border-left: 2px solid #fff;
+}*/
+
+.blurredBG.notification.critical {
+    background: #cb4b16;
+}
+
+.notificationInCenter.critical {
+    background: #cb4b16;
+}
+
+/* Labels */
+
+label {
+    color: #FFFFFF;
+}
+
+label.notification {
+    color: #FFFFFF;
+}
+
+label.critical {
+    color: #FFFFFF;
+}
+.notificationInCenter label.critical {
+    color: #839496;
+}
+
+
+/* Buttons */
+
+button {
+    background: transparent;
+    color: #073642;
+    border-radius: 0px;
+    border-width: 0px;
+    background-position: 0px 0px;
+    text-shadow: none;
+}
+
+button:hover {
+    border-radius: 0px;
+    background: #2aa198;
+    border-width: 0px;
+    border-top: transparent;
+    border-color: #f00;
+    color: #fee;
+}
+
+
+/* Custom Buttons */
+
+.userbutton {
+    background: #073642;
+}
+
+.userbuttonlabel {
+    color: #fff;
+    font-size: 12px;
+}
+
+.userbutton:hover {
+    background: #2aa198;
+}
+
+.userbuttonlabel:hover {
+    color: #fff;
+}
+
+button.buttonState1 {
+    background: #073642;
+}
+
+.userbuttonlabel.buttonState1 {
+    color: #fff;
+}
+
+button.buttonState1:hover {
+    background: #2aa198;
+}
+
+.userbuttonlabel.buttonState1:hover {
+    color: #fff;
+}
+
+button.buttonState2 {
+    background: #073642;
+}
+
+.userbuttonlabel.buttonState2 {
+    color: #fff;
+}
+
+button.buttonState2:hover {
+    background: #2aa198;
+}
+
+.userbuttonlabel.buttonState2:hover {
+    color: #fff;
+}
+
+
+/* Images */
+
+image.deadd-noti-center.notification.image {
+    margin-left: 0px;
+}
