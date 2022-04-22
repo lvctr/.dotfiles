@@ -164,39 +164,44 @@
       <image compression='off'/>
       <gl enable='no'/>
     </graphics>
-    <audio id='1' type='none'/>
+    <sound model='ich9'>
+      <codec type='micro'/>
+      <audio id='1'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x1b' function='0x0'/>
+    </sound>
+    <audio id='1' type='pulseaudio' serverName='/run/user/1000/pulse/native'/>
     <video>
       <model type='none'/>
     </video>
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <source>
-        <address domain='0x0000' bus='0x0c' slot='0x00' function='0x0'/>
+        <address domain='0x0000' bus='0x06' slot='0x00' function='0x0'/>
+      </source>
+      <address type='pci' domain='0x0000' bus='0x0c' slot='0x00' function='0x0'/>
+    </hostdev>
+    <hostdev mode='subsystem' type='pci' managed='yes'>
+      <source>
+        <address domain='0x0000' bus='0x0e' slot='0x00' function='0x0'/>
+      </source>
+      <address type='pci' domain='0x0000' bus='0x05' slot='0x00' function='0x0'/>
+    </hostdev>
+    <hostdev mode='subsystem' type='pci' managed='yes'>
+      <source>
+        <address domain='0x0000' bus='0x0e' slot='0x00' function='0x1'/>
       </source>
       <address type='pci' domain='0x0000' bus='0x06' slot='0x00' function='0x0'/>
     </hostdev>
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <source>
-        <address domain='0x0000' bus='0x0c' slot='0x00' function='0x1'/>
+        <address domain='0x0000' bus='0x0e' slot='0x00' function='0x2'/>
       </source>
       <address type='pci' domain='0x0000' bus='0x07' slot='0x00' function='0x0'/>
     </hostdev>
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <source>
-        <address domain='0x0000' bus='0x0c' slot='0x00' function='0x2'/>
+        <address domain='0x0000' bus='0x0e' slot='0x00' function='0x3'/>
       </source>
       <address type='pci' domain='0x0000' bus='0x08' slot='0x00' function='0x0'/>
-    </hostdev>
-    <hostdev mode='subsystem' type='pci' managed='yes'>
-      <source>
-        <address domain='0x0000' bus='0x0c' slot='0x00' function='0x3'/>
-      </source>
-      <address type='pci' domain='0x0000' bus='0x09' slot='0x00' function='0x0'/>
-    </hostdev>
-    <hostdev mode='subsystem' type='pci' managed='yes'>
-      <source>
-        <address domain='0x0000' bus='0x06' slot='0x00' function='0x0'/>
-      </source>
-      <address type='pci' domain='0x0000' bus='0x0c' slot='0x00' function='0x0'/>
     </hostdev>
     <redirdev bus='usb' type='spicevmc'>
       <address type='usb' bus='0' port='2'/>
@@ -212,14 +217,6 @@
     </shmem>
   </devices>
   <qemu:commandline>
-    <qemu:arg value='-rtc'/>
-    <qemu:arg value='base=localtime'/>
-    <qemu:arg value='-device'/>
-    <qemu:arg value='intel-hda'/>
-    <qemu:arg value='-device'/>
-    <qemu:arg value='hda-micro,audiodev=audiojack0'/>
-    <qemu:arg value='-audiodev'/>
-    <qemu:arg value='jack,id=audiojack0'/>
     <qemu:env name='PIPEWIRE_LATENCY' value='512/48000'/>
     <qemu:env name='PIPEWIRE_RUNTIME_DIR' value='/run/user/1000'/>
   </qemu:commandline>
