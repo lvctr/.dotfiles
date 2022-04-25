@@ -35,7 +35,7 @@ I am also using the `powerlevel10k` theme.
 |||
 |--|--|
 | **wm** | `bspwm` |
-| **com** | `picom-tryone-git` |
+| **com** | `picom-jonaburg-git` |
 | **bar** | `polybar` |
 | **notifs** | `dunst` |
 | **menu** | `rofi` |
@@ -48,7 +48,7 @@ I am also using the `powerlevel10k` theme.
 | **term** | `kitty` |
 | **fm** | `thunar` |
 | **editor** | `sublime-text` |
-| **images** | `gpicview` |
+| **images** | `eog` |
 | **video** | `mpv-full` with `svp` |
 
 ### AUDIO
