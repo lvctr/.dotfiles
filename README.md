@@ -10,8 +10,8 @@ This is mainly just for me so that I have a documentation of everything I use, b
 | **Model** | | Lenovo Legion 5 15 | Dell XPS 13 9360
 | **OS** | Arch Linux (VFIO Windows) | Arch Linux | Arch Linux
 | **CPU** | AMD Ryzen 7 5800X | AMD Ryzen 7 4800H | Intel Core i5 7200U
-| **Host GPU** | AMD Radeon RX 5500 XT | AMD Radeon Vega 7 | Intel HD Graphics 620
-| **Guest GPU** | AMD Radeon RX 6800 XT | Nvidia GeForce GTX 1650Ti
+| **Host GPU** | AMD Radeon RX 550 | AMD Radeon Vega 7 | Intel HD Graphics 620
+| **Guest GPU** | Nvidia GeForce RTX 3070Ti | Nvidia GeForce GTX 1650Ti
 | **RAM** | 32GB DDR4-3200 | 16GB DDR4-3200 | 8GB DDR3-1866
 | **SSD1** | SK Hynix 256GB | Crucial M500 500GB | SK Hynix 250GB
 | **SSD2** | WD Blue 1TB | 
