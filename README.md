@@ -1,4 +1,4 @@
-# insti's dotfiles
+# lvctr's dotfiles
 
 Hello and welcome to my dotfiles repo.
 This is mainly just for me so that I have a documentation of everything I use, but feel free to grab whatever you want from here.
@@ -48,7 +48,7 @@ I am also using the `powerlevel10k` theme.
 | **term** | `kitty` |
 | **fm** | `thunar` |
 | **editor** | `sublime-text` |
-| **images** | `eog` |
+| **images** | `gpicview` |
 | **video** | `mpv-full` with `svp` |
 
 ### AUDIO
