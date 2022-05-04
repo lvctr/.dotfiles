@@ -8,28 +8,10 @@ hybrid_switching=1
 
 
 gpu_current() {
-	mode=$(optimus-manager --print-mode)
+	mode=$(envycontrol --query)
 
     echo "$mode" | cut -d ' ' -f 5 | tr -d '[:space:]'
 }
-
-# gpu_switch() {
-#     mode=$(gpu_current)
-
-# 	if [ "$mode" = "integrated" ]; then
-# 		next="nvidia"
-# 	elif [ "$mode" = "nvidia" ]; then
-# 		if [ "$hybrid_switching" = 1 ]; then
-# 			next="hybrid"
-# 		else
-# 			next="integrated"
-# 		fi
-# 	elif [ "$mode" = "hybrid" ]; then
-# 		next="nvidia"
-# 	fi
-
-# 	optimus-manager --switch $next --no-confirm
-# }
 
 gpu_switch() {
     mode=$(gpu_current)
@@ -46,7 +28,7 @@ gpu_switch() {
 		next="integrated"
 	fi
 
-	optimus-manager --switch $next --no-confirm
+	envycontrol --switch $next --no-confirm
 }
 
 gpu_display(){
