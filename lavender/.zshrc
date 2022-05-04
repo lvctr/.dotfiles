@@ -142,6 +142,7 @@ alias :q="exit"
 export MAKEOPTS='-j16'
 export MAKEFLAGS='-j16'
 
+alias imgtheme="java -jar ~/.scripts/ImageTheming.jar"
 alias lg="looking-glass-client -m 194 -F win:noScreensaver=no win:minimizeOnFocusLoss=no"
 alias desktop=/home/insti/.scripts/change_desktop.sh
 

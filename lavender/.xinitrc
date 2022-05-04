@@ -10,7 +10,10 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 
-eval $(gnome-keyring-daemon --start --components=secrets,ssh,pcks11)
+# eval $(gnome-keyring-daemon --start --components=secrets,ssh,pcks11)
+# export SSH_AUTH_SOCK
+
+eval $(gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
 
 export QT_QPA_PLATFORMTHEME=gtk2

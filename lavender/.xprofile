@@ -1,7 +1,9 @@
+xrandr --output eDP --primary --mode 1920x1080 --set TearFree on &
 xrdb -merge ~/.Xresources &&
 xsetroot -cursor_name left_ptr &
 setxkbmap -option caps:swapescape &
 xset b off &
+/home/insti/.scripts/legion-kb-rgb Static 42,161,152,7,54,66,181,137,0,203,75,22 &
 
 export _JAVA_AWT_WM_NONREPARENTING=1
 export GTK_IM_MODULE=fcitx
@@ -12,3 +14,6 @@ export QT_QPA_PLATFORMTHEME=gtk2
 
 /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
 /usr/lib/kdeconnectd &
+
+eval $(gnome-keyring-daemon --start)
+export SSH_AUTH_SOCK
