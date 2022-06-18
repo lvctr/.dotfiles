@@ -33,6 +33,7 @@ fcitx5 &
 dunst &
 libinput-gestures &
 nm-applet --indicator &
+blueman-tray &
 # kdeconnect-indicator &
 rclone --vfs-cache-mode writes mount "onedrive":  ~/OneDrive &
 

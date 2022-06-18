@@ -8,7 +8,7 @@ hybrid_switching=1
 
 
 gpu_current() {
-	mode=$(envycontrol --query)
+	mode=$(optimus-manager --print-mode)
 
     echo "$mode" | cut -d ' ' -f 5 | tr -d '[:space:]'
 }
@@ -28,7 +28,7 @@ gpu_switch() {
 		next="integrated"
 	fi
 
-	envycontrol --switch $next --no-confirm
+	optimus-manager --switch $next --no-confirm
 }
 
 gpu_display(){

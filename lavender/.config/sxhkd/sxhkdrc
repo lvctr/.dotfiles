@@ -144,9 +144,9 @@ XF86AudioMute
 	pactl set-sink-mute 0 toggle
 
 XF86MonBrightnessUp
-	brightnessctl -d amdgpu_bl0 -s s +10%
+	brightnessctl -d $BL_NAME -s s +10%
 XF86MonBrightnessDown
-	brightnessctl -d amdgpu_bl0 -s s 10%-
+	brightnessctl -d $BL_NAME -s s 10%-
 
 XF86Calculator
 	/home/insti/.scripts/legion-kb-rgb Static 42,161,152,7,54,66,181,137,0,203,75,22 &

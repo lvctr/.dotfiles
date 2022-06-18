@@ -1,0 +1,23 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Codecs33",
+		"Color Highlight",
+		"ConvertToUTF8",
+		"Emoji",
+		"Fortran",
+		"i3 wm",
+		"INI",
+		"Javascript Beautify",
+		"Julia",
+		"Materialize",
+		"Package Control",
+		"SCSS",
+		"Theme - Monokai Pro",
+		"Theme - Solarized Flat",
+	],
+}

@@ -8,7 +8,7 @@
     * @source https://github.com/Discord-Theme-Addons/compact-userarea/tree/main/src
 **/
 
-@import url('https://discord-theme-addons.github.io/compact-userarea/src/support/compiled.css');
+@import url('https://discord-extensions.github.io/compact-userarea/support/compiled.css');
 
 :root {
     --container-color: var(--background-floating);

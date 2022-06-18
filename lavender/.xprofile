@@ -15,5 +15,6 @@ export QT_QPA_PLATFORMTHEME=gtk2
 /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
 /usr/lib/kdeconnectd &
 
-eval $(gnome-keyring-daemon --start)
-export SSH_AUTH_SOCK
+for i in /sys/class/backlight/amdgpu_*; do
+    export BL_NAME=$(basename $i);
+done
