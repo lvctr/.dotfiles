@@ -1,1 +1,6 @@
-xrandr --output DisplayPort-0 --primary --mode 2560x1080 --rate 144 --pos 1080x1080 --rotate normal --set TearFree on --output HDMI-A-0 --mode 1920x1080 --rate 75 --pos 1400x0 --rotate normal --set TearFree on --output DVI-D-0 --mode 1920x1080 --rate 60 --pos 0x660 --rotate left --set TearFree on 
+#!/bin/bash
+xrandr \
+	--output HDMI-A-0 --primary --mode 2560x1080 --rate 144 --pos 0x1080 --rotate normal --set TearFree on \
+	--output DisplayPort-0 --mode 1920x1080 --rate 74.97 --pos 320x0 --rotate normal --set TearFree on \
+	--output DisplayPort-1 --mode 1920x1080 --rate 74.97 --pos 2560x660 --rotate left --set TearFree on \
+	--output DisplayPort-2 --off

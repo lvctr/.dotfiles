@@ -10,7 +10,7 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Set environment variables for hwmon
 for i in /sys/class/hwmon/hwmon*/temp*_input; do 
-    if [ "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*}))" = "k10temp: Tdie" ]; then
+    if [ "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*}))" = "k10temp: Tctl" ]; then
         export HWMON_CPU_PATH="$i"
     elif [ "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*}))" = "amdgpu: edge" ]; then
         export HWMON_GPU_PATH="$i"
@@ -18,7 +18,8 @@ for i in /sys/class/hwmon/hwmon*/temp*_input; do
 done
 
 # Launch bar1 and bar2
-polybar sub-top -c ~/.config/polybar/config.ini &
-polybar main-bottom -c ~/.config/polybar/config.ini &
-polybar portrait-top -c ~/.config/polybar/config.ini &
-polybar portrait-bottom -c ~/.config/polybar/config.ini &
+polybar main -c ~/.config/polybar/config.ini &
+polybar sub -c ~/.config/polybar/config.ini &
+polybar main-sub -c ~/.config/polybar/config.ini &
+polybar side-main -c ~/.config/polybar/config.ini &
+polybar side-sub -c ~/.config/polybar/config.ini &
