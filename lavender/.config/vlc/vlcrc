@@ -1,5 +1,5 @@
 ﻿###
-###  vlc 3.0.16
+###  vlc 3.0.17.4
 ###
 
 ###
@@ -659,7 +659,7 @@
 [freetype] # Freetype2 font renderer
 
 # Font (string)
-#freetype-font=Serif Bold
+freetype-font=DejaVu Sans
 
 # Monospace Font (string)
 #freetype-monofont=Monospace
@@ -1405,7 +1405,7 @@
 #sout-avi-subject=
 
 # Encoder (string)
-#sout-avi-encoder=VLC Media Player - 3.0.16 Vetinari
+#sout-avi-encoder=VLC Media Player - 3.0.17.4 Vetinari
 
 # Keywords (string)
 #sout-avi-keywords=
@@ -1563,7 +1563,7 @@
 #qt-minimal-view=0
 
 # Systray icon (boolean)
-#qt-system-tray=1
+qt-system-tray=0
 
 # Show notification popup on track change (integer)
 #qt-notification=1
@@ -1902,11 +1902,6 @@ qt-privacy-ask=0
 
 [motion] # motion control interface
 
-[lirc] # Infrared remote control interface
-
-# Change the lirc configuration file (string)
-#lirc-file=
-
 [gestures] # Mouse gestures control interface
 
 # Motion threshold (10-100) (integer)
@@ -2137,10 +2132,10 @@ qt-privacy-ask=0
 #sout-x264-stats=x264_2pass.log
 
 # Default preset setting used (string)
-#sout-x264-preset=
+sout-x264-preset=ultrafast
 
 # Default tune setting used (string)
-#sout-x264-tune=
+sout-x264-tune=film
 
 # x264 advanced options (string)
 #sout-x264-options=
@@ -2584,9 +2579,6 @@ qt-privacy-ask=0
 # Frames Threads (integer)
 #dav1d-thread-frames=0
 
-# Tiles Threads (integer)
-#dav1d-thread-tiles=0
-
 [cc] # Closed Captions decoder
 
 # Opacity (boolean)
@@ -2619,7 +2611,7 @@ qt-privacy-ask=0
 #avcodec-fast=0
 
 # Skip the loop filter for H.264 decoding (integer)
-#avcodec-skiploopfilter=0
+avcodec-skiploopfilter=4
 
 # Debug mask (integer)
 #avcodec-debug=0
@@ -3038,20 +3030,26 @@ qt-privacy-ask=0
 
 [access_output_srt] # SRT stream output
 
-# SRT chunk size (bytes) (integer)
-#chunk-size=1316
-
 # Return poll wait after timeout milliseconds (-1 = infinite) (integer)
-#poll-timeout=100
+#poll-timeout=-1
 
 # SRT latency (ms) (integer)
-#latency=125
+#latency=120
 
 # Password for stream encryption (string)
 #passphrase=
 
+# SRT maximum payload size (bytes) (integer)
+#payload-size=1316
+
+# SRT maximum bandwidth ceiling (bytes) (integer)
+#bandwidth-overhead-limit=25
+
 # Crypto key length in bytes (integer)
 #key-length=16
+
+#  SRT Stream ID (string)
+#streamid=
 
 [access_output_rist] # RIST stream output
 
@@ -3469,6 +3467,9 @@ qt-privacy-ask=0
 # Audio CD device (string)
 #cd-audio=/dev/sr0
 
+# Musicbrainz Server (string)
+#musicbrainz-server=musicbrainz.org
+
 # CDDB Server (string)
 #cddb-server=freedb.videolan.org
 
@@ -3485,20 +3486,20 @@ qt-privacy-ask=0
 
 [access_srt] # SRT input
 
-# SRT chunk size (bytes) (integer)
-#chunk-size=1316
-
 # Return poll wait after timeout milliseconds (-1 = infinite) (integer)
 #poll-timeout=-1
 
 # SRT latency (ms) (integer)
-#latency=125
+#latency=120
 
 # Password for stream encryption (string)
 #passphrase=
 
 # Crypto key length in bytes (integer)
 #key-length=16
+
+#  SRT Stream ID (string)
+#streamid=
 
 [access_mms] # Microsoft Media Server (MMS) input
 
@@ -3612,7 +3613,7 @@ qt-privacy-ask=0
 #audio-time-stretch=1
 
 # Audio output module (string)
-#aout=
+aout=any
 
 # Media role (string)
 #role=video
@@ -3750,7 +3751,7 @@ qt-privacy-ask=0
 #deinterlace-mode=auto
 
 # Video output module (string)
-#vout=
+vout=any
 
 # Video filter module (string)
 #video-filter=

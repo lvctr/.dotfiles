@@ -27,12 +27,13 @@ super + Escape
 #
 
 # quit/restart bspwm
-super + shift + {q,r}
+super + shift + {p,r}
 	bspc {quit,wm -r}
 
 # close and kill
 super + {_,shift + }q
 	bspc node -{c,k}
+
 
 # alternate between the tiled and monocle layout
 super + m
@@ -169,9 +170,6 @@ ctrl + shift + x
 ctrl + shift + z
 	flameshot full -c -p ~/Pictures/Screenshots
 
-# up down left right with altgr
-mode_switch + {s,d,e,f}
-	xdotool key {Left,Down,Up,Right}
 
 # Alt_R + s
 # 	xdotool key Left
