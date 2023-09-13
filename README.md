@@ -47,8 +47,9 @@ I am also using the `powerlevel10k` theme.
 |--|--|
 | **term** | `kitty` |
 | **fm** | `thunar` |
-| **editor** | `sublime-text` |
+| **editor** | `visual-studio-code-bin` and `sublime-text` |
 | **images** | `viewnior` |
+| **audio** | `pragha` and `spotify` |
 | **video** | `mpv-full` with `svp` |
 
 ### AUDIO
