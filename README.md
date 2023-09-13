@@ -61,17 +61,8 @@ For audio I use `pipewire` with the following additions:
 
 and manage devices with `pavucontrol` for PulseAudio and `qjackctl` for JACK.
 
-### CHAT
-
-Mainly use `discord` with `betterdiscord-installer` to chat, with the following plugins:
-
-- to do
-- theres so many lmao
-- just check the repo its all there
-
 ### OTHERS
-- `openrgb-git` for RGB control
-- `liquitctl` for AIO control
+- `openrgb-bin` for RGB control
 - `earlyoom` for OOM management
 - `tlp` and `autosuspend` for battery management
 
