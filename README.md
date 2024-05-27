@@ -7,7 +7,7 @@ This is mainly just for me so that I have a documentation of everything I use, b
 |  | RAINLILY | WATERLILY | WINTERBERRY
 |--|--|--|--|
 | **Class** | Desktop | Laptop | Laptop
-| **Model** | | Lenovo ThinkPad T480s | Dell XPS 13 9360
+| **Host** | ASUS ROG STRIX X470-F | Lenovo ThinkPad T480s | Dell XPS 13 9360
 | **OS** | Arch Linux (VFIO Windows) | Arch Linux/Windows | Arch Linux
 | **CPU** | AMD Ryzen 7 5800X | Intel Core i7-8650U vPro | Intel Core i5-7200U
 | **Host GPU** | AMD Radeon RX 5500 XT | Intel HD Graphics 620 | Intel HD Graphics 620
