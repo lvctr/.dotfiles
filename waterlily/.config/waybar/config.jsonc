@@ -1,0 +1,247 @@
+// -*- mode: jsonc -*-
+[
+{
+    // Bar 1 Metadata
+    "layer": "bottom", // Waybar at top layer
+    "output": "eDP-1",
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 32, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 8, // Gaps between modules (4px)
+    "margin-top": 8,
+    "margin-left": 8,
+    "margin-right": 8,
+
+    // Module Positioning
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/window",
+    ],
+    "modules-center": [
+        
+    ],
+    "modules-right": [
+        "mpris",
+        "pulseaudio",
+        "backlight",
+        "custom/weather",
+        "clock#date",
+        "clock",
+        "custom/notification",
+        "custom/swaync",
+    ],
+
+    // Modules Configuration
+    "custom/arch": {
+        "format": "󰣇 insti",
+    },
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+    },
+
+    "hyprland/window": {
+        "separate-outputs": false,
+        "format": "{class}",
+    },
+
+    "mpris": {
+        "format": "{player_icon} {title} / {artist}",
+        "format-paused": "{status_icon} {title} / {artist}",
+        "player-icons": {
+            "default": "",
+            "spotify": "<span color=\"#859900\"></span>",
+            "vlc": "<span color=\"#cb4b16\">󰕼</span>",
+            "mpv": "<span color=\"#6c71c4\"></span>"
+        },
+        "status-icons": {
+            "paused": ""
+        },
+        "ignored-players": ["vlc", "mpv", "firefox", "Google-chrome"],
+        "tooltip-format": "Playing on {player}"
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "󰂰 {volume}%",
+        "format-muted": "<span color=\"#586e75\">󰸈 Muted</span>",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", "", ""]
+        },
+        "scroll-step": 5,
+        "on-click": "pavucontrol",
+        "on-click-right": "pulseaudio-control next-node",
+        "on-click-middle": "pulseaudio-control togmute",
+        "ignored-sinks": ["Easy Effects Sink"]
+    },
+
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": [""] ,
+    },
+
+    "custom/weather": {
+        "format": "{}",
+        "exec": "~/.config/polybar/scripts/openweathermap-simple.sh",
+        "interval": 60,
+    },
+
+    "clock#date": {
+        "format": " {:%Y %m %d}",
+        "interval": 1,
+    },
+
+    "clock": {
+        "format": " {:%H %M %S}",
+        "interval": 1,
+    },
+
+    "custom/notification": {
+        "tooltip": true,
+        "format": "{icon} {}",
+        "format-icons": {
+            "notification": "<span color=\"#2aa198\">󰂚</span>",
+            "none": "󰂜",
+            "dnd-notification": "<span color=\"#cb4b16\">󰂠</span>",
+            "dnd-none": "<span color=\"#cb4b16\">󰪓</span>",
+            "inhibited-notification": "󰂠",
+            "inhibited-none": "󰪓",
+            "dnd-inhibited-notification": "󰂠",
+            "dnd-inhibited-none": "󰪓"
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+
+    "custom/swaync": {
+        "format": "{}",
+        "exec-if": "which swaync-client",
+        // "exec": "swaync-client -swb | jq .text",
+        "exec": "swaync-client -swb",
+        "return-type": "json",
+        "interval": 1,
+    },
+},
+
+{
+    // Bar 2 Metadata
+    "layer": "bottom", // Waybar at top layer
+    "output": "eDP-1",
+    "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 32, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 8, // Gaps between modules (4px)
+    "margin-bottom": 8,
+    "margin-left": 8,
+    "margin-right": 8,
+
+    // Module Positioning
+    "modules-left": [
+        "cpu",
+        "cpu-freq",
+        "cpu-temp",
+        "gpu-usage",
+        "memory",
+        "disk",
+        "battery"
+    ],
+    "modules-center": [
+        
+    ],
+    "modules-right": [
+        "qbittorrent",
+        "mullvad",
+        "network",
+        "tray",
+    ],
+
+    // Modules Configuration
+    "cpu": {
+        "interval": 3,
+        "format": " {load:0.2f}% {avg_frequency:0.2f}GHz"
+    },
+
+    "memory": {
+        "interval": 3,
+        "format": " {percentage}% {used:0.2f}GiB",
+    },
+
+    "disk": {
+        "interval": 30,
+        "format": "󰉉 {percentage_used}% {specific_free:0.0f}GB",
+        "unit": "GB",
+    },
+ 
+    "battery": {
+        "interval": 3,
+        "states": {
+            "warning": 30,
+            "critical": 10,
+        },
+        "format": "{icon} {capacity}% {power:0.2f}W 󱐋 {time}",
+        "format-charging": "{icon} {capacity}% {power:0.2f}W 󰚥 {time}",
+        "format-icons": {
+            "discharging": [
+                "<span color=\"#dc322f\">󰂎</span>", 
+                "<span color=\"#dc322f\">󰁺</span>", 
+                "<span color=\"#cb4b16\">󰁻</span>", 
+                "󰁼", 
+                "󰁽", 
+                "󰁾", 
+                "󰁿", 
+                "󰂀", 
+                "󰂁", 
+                "󰂂", 
+                "󰂄"
+            ],
+            "charging": [
+                "<span color=\"#dc322f\">󰢟</span>", 
+                "<span color=\"#dc322f\">󰢜</span>", 
+                "<span color=\"#cb4b16\">󰂆</span>", 
+                "󰂇", 
+                "󰂈", 
+                "󰢝", 
+                "󰂉", 
+                "󰢞", 
+                "󰂊", 
+                "󰂋", 
+                "󰂅"
+            ],
+            "full": [
+                "<span color=\"#2aa198\">󰂄</span>",
+            ],
+        },
+        "format-time": "{H} {m}",
+        // "format-icons": ["", "", "", "", ""],
+    },
+
+    "network": {
+        "format": "󰇚 {bandwidthDownBytes} 󰕒 {bandwidthUpBytes}",
+        "format-disconnected": "", //An empty format will hide the module.
+        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+        "tooltip-format-wifi": " {ifname} @ {essid} ({signalStrength}%) | {ipaddr}/{cidr}",
+        "tooltip-format-ethernet": " {ifname} | {ipaddr}/{cidr}",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50,
+        "interval": 1,
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 8,
+        "show-passive-items": false,
+    }
+},
+]

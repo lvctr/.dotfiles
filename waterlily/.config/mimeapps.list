@@ -1,0 +1,11 @@
+[Default Applications]
+inode/directory=pcmanfm.desktop
+image/png=viewnior.desktop
+application/zip=xarchiver.desktop
+video/x-matroska=vlc.desktop
+
+[Added Associations]
+video/x-matroska=svp-manager4.desktop;vlc.desktop;
+application/zip=xarchiver.desktop;mcomix.desktop;
+image/png=viewnior.desktop;
+text/plain=sublime_text.desktop;
