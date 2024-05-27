@@ -10,13 +10,12 @@ This is mainly just for me so that I have a documentation of everything I use, b
 | **Model** | | Lenovo ThinkPad T480s | Dell XPS 13 9360
 | **OS** | Arch Linux (VFIO Windows) | Arch Linux/Windows | Arch Linux
 | **CPU** | AMD Ryzen 7 5800X | Intel Core i7-8650U vPro | Intel Core i5-7200U
-| **Host GPU** | AMD Radeon RX 550 | Intel HD Graphics 620 | Intel HD Graphics 620
+| **Host GPU** | AMD Radeon RX 5500 XT | Intel HD Graphics 620 | Intel HD Graphics 620
 | **Guest GPU** | Nvidia GeForce RTX 3070Ti | |
 | **RAM** | 32GB DDR4-3200 | 24GB DDR4-2400 | 8GB DDR3-1866
-| **SSD1** | SK Hynix 256GB | Intel 500GB | SK Hynix 250GB
-| **SSD2** | WD Blue 1TB | WD SN520 256GB
-| **SSD3** | Samsung 860 EVO 1TB | 
-| **HDDs** | Toshiba 1TB 5400RPM |
+| **SSD1** | Kioxia Exceria Pro 1TB (Linux) | Intel 500GB (Linux) | SK Hynix 250GB
+| **SSD2** | Kioxia Exceria Pro 2TB (Windows) | WD SN520 256GB (Windows)
+| **SSD3** | Samsung 860 EVO 1TB | |
 
 ## ENVIRONMENT
 
