@@ -1,9 +1,0 @@
-#!/bin/sh
-sleep 1
-
-# xlayoutdisplay
-# feh --bg-fill /home/insti/Pictures/Wallpaper/wallpaper.jpg
-# /home/insti/.config/polybar/launch.sh &
-# bspc wm -O eDP
-
-exit 0

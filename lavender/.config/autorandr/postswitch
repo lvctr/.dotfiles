@@ -1,7 +1,0 @@
-#!/bin/sh
-sleep 1
-
-feh --bg-fill /home/insti/Pictures/Wallpaper/wallpaper.jpg
-/home/insti/.config/polybar/launch.sh &
-
-exit 0
