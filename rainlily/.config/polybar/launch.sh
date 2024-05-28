@@ -20,6 +20,6 @@ done
 # Launch bar1 and bar2
 polybar main -c ~/.config/polybar/config.ini &
 polybar sub -c ~/.config/polybar/config.ini &
-polybar main-sub -c ~/.config/polybar/config.ini &
+# polybar main-sub -c ~/.config/polybar/config.ini &
 polybar side-main -c ~/.config/polybar/config.ini &
 polybar side-sub -c ~/.config/polybar/config.ini &

@@ -1,11 +1,11 @@
 #! /bin/sh
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor DisplayPort-0 -d 1 2 3
-bspc monitor DisplayPort-1 -d 4 5
-bspc monitor HDMI-A-0 -d 6 7 8 9
+# bspc monitor DisplayPort-1 -d 1 2 3
+bspc monitor HDMI-A-0 -d 1 2 3
+bspc monitor DisplayPort-2 -d 4 5 6
 
-bspc wm -O DisplayPort-0 DisplayPort-1 HDMI-A-0
+bspc wm -O HDMI-A-0 DisplayPort-2
 
 bspc config border_width        1
 bspc config window_gap          9
@@ -24,17 +24,18 @@ bspc rule -a Screenkey manage=off
 # Startup
 killall picom
 picom -b --experimental-backends &
-feh --bg-fill /home/insti/Data/Pictures/Wallpaper/wallpaper.png &
+feh --bg-fill /home/insti/Data/Pictures/Wallpaper/wallpaper2560.png --bg-fill /home/insti/Data/Pictures/Wallpaper/wallpaper-portrait.png &
 $HOME/.config/polybar/launch.sh &
 xmousepasteblock &
 flameshot &
 thunar -daemon &
 fcitx5 &
 dunst &
+gkraken &
 libinput-gestures &
 nm-applet --indicator &
 kdeconnect-indicator &
-rclone --vfs-cache-mode writes mount "OneDrive":  ~/Data/OneDrive &
+# rclone --vfs-cache-mode writes mount "OneDrive":  ~/Data/OneDrive &
 
 xsetwacom set 10 MapToOutput HDMI-A-0 
 xsetwacom set 10 Area 0 0 15200 4008
@@ -46,8 +47,7 @@ xsetwacom set 12 Button 8 "key F20"
 
 # Startup apps
 discord --ignore-gpu-blocklist --disable-features=UseOzonePlatform --enable-features=VaapiVideoDecoder --use-gl=desktop --enable-gpu-rasterization --enable-zero-copy --enable-blink-features=MiddleClickAutoscroll --start-minimized &
-slack -u &
+# slack -u &
 coolero &
 
 sleep 5s
-bspc wm -O DisplayPort-0 DisplayPort-1 HDMI-A-0
