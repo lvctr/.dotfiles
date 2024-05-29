@@ -15,7 +15,6 @@ This is mainly just for me so that I have a documentation of everything I use, b
 | **RAM** | 32GB DDR4-3200 | 24GB DDR4-2400 | 8GB DDR3-1866
 | **SSD1** | Kioxia Exceria Pro 1TB (Linux) | Intel 500GB (Linux) | SK Hynix 250GB
 | **SSD2** | Kioxia Exceria Pro 2TB (Windows) | WD SN520 256GB (Windows)
-| **SSD3** | Samsung 860 EVO 1TB | |
 
 ## ENVIRONMENT
 
@@ -25,22 +24,15 @@ Main shell is `zsh` with the following plugins:
 - `zsh-autosuggestions`
 - `zsh-completions`
 - `zsh-syntax-highlighting`
+- `sudo`
+- `git`
+- `colored-man-pages`
 
-managed using `oh-my-zsh`.
+managed using `zinit`.
 
 I am also using the `powerlevel10k` theme.
 
 ### DESKTOP
-|||
-|--|--|
-| **wm** | `bspwm` |
-| **com** | `picom-jonaburg-git` |
-| **bar** | `polybar` |
-| **notifs** | `dunst` |
-| **menu** | `rofi` |
-| **bg** | `feh` |
-| **ime** | `fcitx5-mozc` |
-
 |||
 |--|--|
 | **de** | `hyprland` |
@@ -72,7 +64,7 @@ and manage devices with `pavucontrol` for PulseAudio and `qjackctl` for JACK.
 ### OTHERS
 - `openrgb-bin` for RGB control
 - `earlyoom` for OOM management
-- `tlp` for battery management
+- `tlp` and `tlpui` for battery management
 
 ### VFIO
 
