@@ -6,6 +6,8 @@ IT MAY NOT WORK FOR YOU.
 
 PLEASE READ [PCI passthrough via OVMF on the Arch Linux Wiki](https://wiki.archlinux.org/title/PCI_passthrough_via_OVMF) IF YOU ARE INTERESTED IN SETTING UP VFIO YOURSELF.
 
+ALSO SINGLE GPU PASSTHROUGH IS STUPID. JUST DUAL BOOT LMAO.
+
 ## Windows 11
 
 ### Kernel-related settings
