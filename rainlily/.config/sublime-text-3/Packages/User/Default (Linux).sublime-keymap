@@ -1,7 +1,0 @@
-[
-	{ "keys": ["ctrl+alt+s"], "command": "prompt_save_as" },
-	{ "keys": ["ctrl+shift+s"], "command": "toggle_side_bar" },
-
-	{ "keys": ["ctrl+shift+m"], "command": "toggle_menu" },
-	{ "keys": ["ctrl+alt+m"], "command": "expand_selection", "args": {"to": "brackets"} },
-]

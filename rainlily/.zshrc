@@ -1,5 +1,3 @@
-neofetch
-
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -7,155 +5,61 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=/home/insti/.scripts/:$PATH
 
-# Path to your oh-my-zsh installation.
-export ZSH="/home/insti/.oh-my-zsh"
+# ZINIT
+source /usr/share/zinit/zinit.zsh
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
-# Available themes: robbyrussell, powerlevel10k/powerlevel10k
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-syntax-highlighting
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+zinit snippet OMZP::sudo/sudo.plugin.zsh
+zinit snippet OMZL::git.zsh
+zinit snippet OMZP::colored-man-pages
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+zinit ice depth=1
+zinit light romkatv/powerlevel10k
 
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+zmodload zsh/complist
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+unsetopt beep
+bindkey -e
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/insti/.zshrc'
+zstyle ':completion:*' menu select
 
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(
-	archlinux
-	git
-	sudo
-	zsh-autosuggestions
-	zsh-completions
- 	zsh-syntax-highlighting
-)
-
-autoload -U compinit && compinit
-
-source $ZSH/oh-my-zsh.sh
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=60'
 
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+autoload -Uz select-word-style
+select-word-style bash
 
 # Keybinds
-bindkey	"^[[1;5D"	backward-word			# Alt + Left
-bindkey	"^[[1;5C"	forward-word			# Alt + Right
-bindkey	"^[[1;3D"	backward-word			# Ctrl + Left
-bindkey	"^[[1;3C"	forward-word			# Ctrl + Right
-bindkey	"^H"		backward-delete-word	# Alt + Backspace
+bindkey	"^[[1;5D"	backward-word			    # Alt  + Left
+bindkey	"^[[1;5C"	forward-word		      # Alt  + Right
+bindkey	"^[[1;3D"	backward-word         # Ctrl + Left
+bindkey	"^[[1;3C"	forward-word          # Ctrl + Right
+bindkey	"^H"      backward-kill-word    # Alt  + Backspace
+bindkey '^W'      backward-delete-word  # Ctrl + Backspace
+
+bindkey '\e[A' history-search-backward
+bindkey '\e[B' history-search-forward
+
+bindkey -M menuselect '^[[Z' reverse-menu-complete
+
+# Alias
+alias :q="exit"
+alias :q!="exit"
+alias gotop="gotop --color=solarized"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# Functions
-password () {bw list items --search "$@" | jq '.[0].login.username, .[0].login.password';}
-updot () {git add -A && git commit -m "$@" && git push &}
-
-# Aliases
-# alias upload-dotfiles="git add -A && git commit -m 'Update dotfiles' && git push"
-alias caffeine="xset -dpms && xset s off"
-alias larkspur="kitty +kitten ssh insti@192.168.0.102"
-alias :q="exit"
-
-export MAKEOPTS='-j16'
-export MAKEFLAGS='-j16'
-
-export VISUAL=vim
-export EDITOR=vim
-
-alias imgtheme="java -jar ~/.scripts/ImageTheming.jar"
-alias lg="looking-glass-client -m 194 -F win:noScreensaver=yes win:minimizeOnFocusLoss=no"
-alias lgbe="~/Data/Downloads/looking-glass-B5-403-ed0cae84/client/build/looking-glass-client -m 194 -F win:noScreensaver=no win:minimizeOnFocusLoss=no"
-alias desktop=/home/insti/.scripts/change_desktop.sh
-
-# export PATH=/home/insti/.local/share/gem/ruby/3.0.0/bin:$PATH
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
-export GOPATH=$HOME/go
-export GOBIN=$HOME/go/bin
-
-export PATH="$PATH:$(go env GOPATH)/bin"
-export PATH="$PATH:$(go env GOBIN)"

@@ -1,0 +1,5 @@
+[user]
+	email = alvi@kazi.sh
+	name = alvi kazi
+[commit]
+	gpgsign = true

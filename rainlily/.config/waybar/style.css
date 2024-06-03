@@ -1,0 +1,121 @@
+/* Solarized Colourscheme */
+@define-color cursor		#93a1a1;
+@define-color url_color 	#0087BD;
+
+@define-color foreground 	#839496;
+@define-color background 	#002b36;
+
+@define-color selection_foreground #002b36;
+@define-color selection_background #586e75;
+
+@define-color color0   #073642;
+@define-color color8   #002b36;
+
+@define-color color1   #dc322f;
+@define-color color9   #cb4b16;
+
+@define-color color2   #859900;
+@define-color color10  #586e75;
+
+@define-color color3   #b58900;
+@define-color color11  #657b83;
+
+@define-color color4   #268bd2;
+@define-color color12  #839496;
+
+@define-color color5   #d33682;
+@define-color color13  #6c71c4;
+
+@define-color color6   #2aa198;
+@define-color color14  #93a1a1;
+
+@define-color color7   #eee8d5;
+@define-color color15  #fdf6e3;
+
+* {
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+	font-weight: 400;
+}
+
+/* Waybar */
+#waybar {
+	background: transparent;
+    color: @foreground;
+    font-family: "Siji", "Source Han Code JP R", "FiraCode Nerd Font", "Source Han Sans";
+    font-size: 12px;
+}
+
+tooltip {
+	background-color: @background;
+}
+
+#custom-arch,
+#workspaces,
+#tray,
+#window,
+#mpris,
+#pulseaudio,
+#backlight,
+#custom-weather,
+#clock,
+#custom-notification,
+#cpu,
+#memory,
+#disk,
+#battery,
+#custom-power,
+#network {
+	background-color: @background;
+	color: @foreground;
+	border: 1px solid @color6;
+/*	padding: 2 8 2 8;*/
+	padding: 8px;
+	margin: 0px;
+}
+
+#tray {
+	background-color: transparent;
+	border: none;
+}
+
+window#waybar.empty #window {
+	background-color: transparent;
+	border: none;
+}
+
+/* Workspaces */
+#workspaces {
+	padding: 0;
+	border: 1px solid @color6;
+}
+
+#workspaces button {
+	background-color: @background;
+	color: @foreground;
+	margin: 0;
+	padding: 8px;
+}
+
+#workspaces button.persistent {
+	color: @color6;
+}
+
+#workspaces button.empty {
+	color: @foreground;
+}
+
+#workspaces button.visible {
+	color: @color6;
+}
+
+#workspaces button.active {
+	color: @color15;
+	background-color: @color6;
+}
+
+#workspaces button.urgent {
+	color: @color15;
+	background-color: @color1;
+}

@@ -4,17 +4,16 @@
 include "/home/insti/.gtkrc-2.0.mine"
 gtk-theme-name="SolArc-Dark"
 gtk-icon-theme-name="Papirus-Dark"
-gtk-font-name="Source Han Code JP 9"
+gtk-font-name="Source Han Code JP 10"
 gtk-cursor-theme-name="Simp1e-Solarized-Dark"
-gtk-cursor-theme-size=0
+gtk-cursor-theme-size=24
 gtk-toolbar-style=GTK_TOOLBAR_BOTH
 gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
 gtk-button-images=1
 gtk-menu-images=1
 gtk-enable-event-sounds=1
-gtk-enable-input-feedback-sounds=1
+gtk-enable-input-feedback-sounds=0
 gtk-xft-antialias=1
 gtk-xft-hinting=1
 gtk-xft-hintstyle="hintfull"
 gtk-xft-rgba="rgb"
-gtk-error-bell = 0
