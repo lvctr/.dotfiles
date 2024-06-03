@@ -38,7 +38,7 @@ I am also using the `powerlevel10k` theme.
 | **de** | `hyprland` |
 | **bar** | `waybar` |
 | **notifs** | `swaync` |
-| **menu** | `wofi` |
+| **menu** | `rofi-wayland` |
 | **bg** | `hyprpaper` |
 | **ime** | `fcitx5` |
 
@@ -47,14 +47,15 @@ I am also using the `powerlevel10k` theme.
 |--|--|
 | **term** | `kitty` |
 | **fm** | `thunar` |
-| **editor** | `visual-studio-code-bin` and `sublime-text` |
+| **editor** | `sublime-text` and `visual-studio-code-bin` |
 | **images** | `viewnior` |
-| **audio** | `pragha` and `spotify` |
-| **video** | `mpv-full` with `svp` and `vlc` |
+| **audio** | `pragha` and `spotify-launcher` |
+| **video** | `vlc` and `mpv-full` with `svp` |
+| **comms** | `vesktop-bin` |
 
 ### AUDIO
 
-For audio I use `pipewire` with the following additions:
+For audio I use `wireplumber` with the following additions:
 - `pipewire-alsa`
 - `pipewire-jack` and `pipewire-jack-dropin` for JACK support
 - `pipewire-pulse` for PulseAudio support

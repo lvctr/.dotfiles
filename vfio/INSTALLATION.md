@@ -67,6 +67,10 @@ echo "user = "insti"" | sudo tee /etc/libvirt/qemu.conf
 virsh define win11.xml
 ```
 
+## Add hooks
+Copy `hooks/qemu` to `/etc/libvirt/`.
+`/etc/libvirt/hooks/qemu` for reference.
+
 ### Edit XML
 - Make sure to double check the PCI devices.
     - IOMMU groups and PCI IDs can be checked using `~/.scripts/iommu.sh`.
