@@ -1,0 +1,16 @@
+{
+	"color_scheme": "Packages/Materialize/schemes/Material Solarized Dark.tmTheme",
+	"font_face": "FiraCode Nerd Font Mono",
+	"font_size": 14,
+	/*"font_options": ["gray_antialias", "subpixel_antialias", "ss01", "ss02", "ss03", "ss04", "ss05", "ss06", "ss07"],*/
+	"ignored_packages":
+	[
+		"RichTextFormat",
+		"Vintage",
+	],
+	"overlay_scroll_bars": "disabled",
+	"theme": "Material Solarized Dark.sublime-theme",
+	"original_color_scheme": "Packages/Materialize/schemes/Material Solarized Dark.tmTheme",
+	"remember_workspace": false,
+	"index_files": true,
+}

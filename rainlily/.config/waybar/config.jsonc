@@ -15,6 +15,7 @@
     // Module Positioning
     "modules-left": [
         "hyprland/window",
+        "hyprland/window#title",
     ],
     "modules-center": [
         "mpris",
@@ -33,6 +34,12 @@
     "hyprland/window": {
         "separate-outputs": false,
         "format": "{class}",
+    },
+
+    "hyprland/window#title": {
+        "separate-outputs": false,
+        "format": "{title}",
+        "max-length": 48,
     },
 
     "mpris": {

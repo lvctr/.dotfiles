@@ -22,7 +22,7 @@ And then add the boot entries.
 ```
 /etc/mkinitcpio.conf
 
-MODULES=(... vfio_pci vfio vfio_iommu_type1 ...)
+MODULES=(... amdgpu vfio_pci vfio vfio_iommu_type1 ...)
 HOOKS=(... modconf ...)
 ```
 
@@ -61,7 +61,9 @@ systemctl start libvirtd.service virtlogd.service
 ### Other settings
 #### Setting user for PipeWire backend
 ```
-echo "user = "insti"" | sudo tee /etc/libvirt/qemu.conf
+/etc/libvirt/qemu.conf
+
+user = "insti"
 ```
 
 ## Import XML
