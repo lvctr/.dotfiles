@@ -22,7 +22,7 @@ And then add the boot entries.
 ```
 /etc/mkinitcpio.conf
 
-MODULES=(... amdgpu vfio_pci vfio vfio_iommu_type1 ...)
+MODULES=(... vfio_pci vfio vfio_iommu_type1 ...)
 HOOKS=(... modconf ...)
 ```
 
