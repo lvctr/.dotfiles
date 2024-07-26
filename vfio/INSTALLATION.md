@@ -47,6 +47,9 @@ sudo gpasswd -a $USER libvirt
 ```
 
 ### Networking settings
+
+Note: might not work if you don't run these with sudo, so if it doesn't work just sudo it.
+
 ```
 virsh net-autostart default
 virsh net-start default
