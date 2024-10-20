@@ -3,7 +3,7 @@
 {
     // Bar 1 Metadata
     "layer": "bottom", // Waybar at top layer
-    "output": "HDMI-A-1",
+    "output": "DP-1",
     "position": "top", // Waybar position (top|bottom|left|right)
     "height": 32, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
@@ -14,8 +14,8 @@
 
     // Module Positioning
     "modules-left": [
-        "hyprland/window",
-        "hyprland/window#title",
+        "sway/window",
+        "sway/window#title",
     ],
     "modules-center": [
         "mpris",
@@ -23,6 +23,7 @@
     "modules-right": [
         "pulseaudio",
         "backlight",
+        "idle_inhibitor",
         "custom/weather",
         "clock#date",
         "clock",
@@ -31,15 +32,17 @@
     ],
 
     // Modules Configuration
-    "hyprland/window": {
+    "sway/window": {
         "separate-outputs": false,
-        "format": "{class}",
+        "format": "{shell}/{app_id}",
+        "all-outputs": true,
     },
 
-    "hyprland/window#title": {
+    "sway/window#title": {
         "separate-outputs": false,
         "format": "{title}",
         "max-length": 48,
+        "all-outputs": true,
     },
 
     "mpris": {
@@ -76,6 +79,14 @@
     "backlight": {
         "format": "{icon} {percent}%",
         "format-icons": [""] ,
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "<span color=\"#2aa198\">󰅶 on</span>",
+            "deactivated": "<span color=\"#586e75\">󰛊 off</span>"
+        },
     },
 
     "custom/weather": {
@@ -128,7 +139,7 @@
 {
     // Bar 2 Metadata
     "layer": "bottom", // Waybar at top layer
-    "output": "HDMI-A-1",
+    "output": "DP-1",
     "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 32, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
@@ -145,16 +156,14 @@
         "gpu-usage",
         "memory",
         "disk",
-        "battery"
     ],
     "modules-center": [
-        "hyprland/workspaces",
+        "sway/workspaces",
     ],
     "modules-right": [
-        "mullvad",
+        "battery",
         "custom/power",
         "network",
-        "qbittorrent",
         "tray",
     ],
 
@@ -181,9 +190,13 @@
             "warning": 30,
             "critical": 10,
         },
-        "format": "{icon} {capacity}% {power:0.2f}W 󱐋 {time}",
+        "format": "{icon} {capacity}%",
+        "format-discharging": "{icon} {capacity}% {power:0.2f}W 󱐋 {time}",
         "format-charging": "{icon} {capacity}% {power:0.2f}W 󰚥 {time}",
         "format-icons": {
+            "plugged": [
+                "󰂄",
+            ],
             "discharging": [
                 "<span color=\"#dc322f\">󰂎</span>", 
                 "<span color=\"#dc322f\">󰁺</span>", 
@@ -218,7 +231,7 @@
         // "format-icons": ["", "", "", "", ""],
     },
 
-    "hyprland/workspaces": {
+    "sway/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
         "warp-on-scroll": false,
@@ -227,14 +240,30 @@
             "1": "1",
             "2": "2",
             "3": "3",
-            "4": "",
+            "4": "4",
             "5": "5",
             "6": "6",
-        }
+        },
+        /*"persistent-workspaces": {
+            "1": ["DP-1"],
+            "2": ["DP-1"],
+            "3": ["DP-1"],
+            "4": ["DP-1"],
+            "5": ["DP-2"],
+            "6": ["DP-2"],
+        },*/
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+        },
     },
 
     "custom/power": {
-        "format": "{}",
+        "format": "󰂄 {}",
         "exec": "~/.config/waybar/scripts/power-usage.sh",
         "interval": 3,
     },
@@ -257,251 +286,4 @@
     }
 },
 
-
-{
-    // Bar 3 Metadata
-    "layer": "bottom", // Waybar at top layer
-    "output": "DP-3",
-    "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 32, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    "spacing": 8, // Gaps between modules (4px)
-    "margin-top": 8,
-    "margin-left": 8,
-    "margin-right": 8,
-
-    // Module Positioning
-    "modules-left": [
-        "hyprland/window",
-    ],
-    "modules-center": [
-        
-    ],
-    "modules-right": [
-        "custom/weather",
-        "clock#date",
-        "clock",
-        "custom/notification",
-        "custom/swaync",
-    ],
-
-    // Modules Configuration
-    "hyprland/window": {
-        "separate-outputs": false,
-        "format": "{class}",
-    },
-
-    "mpris": {
-        "format": "{player_icon} {title} / {artist}",
-        "format-paused": "{status_icon} {title} / {artist}",
-        "player-icons": {
-            "default": "",
-            "spotify": "<span color=\"#859900\"></span>",
-            "vlc": "<span color=\"#cb4b16\">󰕼</span>",
-            "mpv": "<span color=\"#6c71c4\"></span>"
-        },
-        "status-icons": {
-            "paused": ""
-        },
-        "ignored-players": ["vlc", "mpv", "firefox", "Google-chrome"],
-        "tooltip-format": "Playing on {player}"
-    },
-
-    "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-bluetooth": "󰂰 {volume}%",
-        "format-muted": "<span color=\"#586e75\">󰸈 Muted</span>",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", "", ""]
-        },
-        "scroll-step": 5,
-        "on-click": "pavucontrol",
-        "on-click-right": "pulseaudio-control next-node",
-        "on-click-middle": "pulseaudio-control togmute",
-        "ignored-sinks": ["Easy Effects Sink"]
-    },
-
-    "backlight": {
-        "format": "{icon} {percent}%",
-        "format-icons": [""] ,
-    },
-
-    "custom/weather": {
-        "format": "{}",
-        "exec": "~/.config/waybar/scripts/openweathermap-simple.sh",
-        "interval": 60,
-    },
-
-    "clock#date": {
-        "format": " {:%Y %m %d}",
-        "interval": 1,
-    },
-
-    "clock": {
-        "format": " {:%H %M %S}",
-        "interval": 1,
-    },
-
-    "custom/notification": {
-        "tooltip": true,
-        "format": "{icon} {}",
-        "format-icons": {
-            "notification": "<span color=\"#2aa198\">󰂚</span>",
-            "none": "󰂜",
-            "dnd-notification": "<span color=\"#cb4b16\">󰂠</span>",
-            "dnd-none": "<span color=\"#cb4b16\">󰪓</span>",
-            "inhibited-notification": "󰂠",
-            "inhibited-none": "󰪓",
-            "dnd-inhibited-notification": "󰂠",
-            "dnd-inhibited-none": "󰪓"
-        },
-        "return-type": "json",
-        "exec-if": "which swaync-client",
-        "exec": "swaync-client -swb",
-        "on-click": "swaync-client -t -sw",
-        "on-click-right": "swaync-client -d -sw",
-        "escape": true
-    },
-
-    "custom/swaync": {
-        "format": "{}",
-        "exec-if": "which swaync-client",
-        // "exec": "swaync-client -swb | jq .text",
-        "exec": "swaync-client -swb",
-        "return-type": "json",
-        "interval": 1,
-    },
-},
-
-{
-    // Bar 4 Metadata
-    "layer": "bottom", // Waybar at top layer
-    "output": "DP-3",
-    "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 32, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    "spacing": 8, // Gaps between modules (4px)
-    "margin-bottom": 8,
-    "margin-left": 8,
-    "margin-right": 8,
-
-    // Module Positioning
-    "modules-left": [
-        "cpu",
-        "gpu-usage",
-        "memory",
-    ],
-    "modules-center": [
-        "hyprland/workspaces",
-    ],
-    "modules-right": [
-        "custom/power",
-        "network",
-        "qbittorrent",
-    ],
-
-    // Modules Configuration
-    "cpu": {
-        "interval": 3,
-        "format": " {load:0.2f}% {avg_frequency:0.2f}GHz"
-    },
-
-    "memory": {
-        "interval": 3,
-        "format": " {percentage}% {used:0.2f}GiB",
-    },
-
-    "disk": {
-        "interval": 30,
-        "format": "󰉉 {percentage_used}% {specific_free:0.0f}GB",
-        "unit": "GB",
-    },
- 
-    "battery": {
-        "interval": 3,
-        "states": {
-            "warning": 30,
-            "critical": 10,
-        },
-        "format": "{icon} {capacity}% {power:0.2f}W 󱐋 {time}",
-        "format-charging": "{icon} {capacity}% {power:0.2f}W 󰚥 {time}",
-        "format-icons": {
-            "discharging": [
-                "<span color=\"#dc322f\">󰂎</span>", 
-                "<span color=\"#dc322f\">󰁺</span>", 
-                "<span color=\"#cb4b16\">󰁻</span>", 
-                "󰁼", 
-                "󰁽", 
-                "󰁾", 
-                "󰁿", 
-                "󰂀", 
-                "󰂁", 
-                "󰂂", 
-                "󰂄"
-            ],
-            "charging": [
-                "<span color=\"#dc322f\">󰢟</span>", 
-                "<span color=\"#dc322f\">󰢜</span>", 
-                "<span color=\"#cb4b16\">󰂆</span>", 
-                "󰂇", 
-                "󰂈", 
-                "󰢝", 
-                "󰂉", 
-                "󰢞", 
-                "󰂊", 
-                "󰂋", 
-                "󰂅"
-            ],
-            "full": [
-                "<span color=\"#2aa198\">󰂄</span>",
-            ],
-        },
-        "format-time": "{H} {m}",
-        // "format-icons": ["", "", "", "", ""],
-    },
-
-    "hyprland/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": false,
-        "warp-on-scroll": false,
-        "format": "{icon}",
-        "format-icons": {
-            "1": "1",
-            "2": "2",
-            "3": "3",
-            "4": "",
-            "5": "5",
-            "6": "6",
-        }
-    },
-
-    "custom/power": {
-        "format": "{}",
-        "exec": "~/.config/waybar/scripts/power-usage.sh",
-        "interval": 3,
-    },
-
-    "network": {
-        "format": "󰇚 {bandwidthDownBytes} 󰕒 {bandwidthUpBytes}",
-        "format-disconnected": "", //An empty format will hide the module.
-        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
-        "tooltip-format-wifi": " {ifname} @ {essid} ({signalStrength}%) | {ipaddr}/{cidr}",
-        "tooltip-format-ethernet": " {ifname} | {ipaddr}/{cidr}",
-        "tooltip-format-disconnected": "Disconnected",
-        "max-length": 50,
-        "interval": 1,
-    },
-
-    "tray": {
-        "icon-size": 16,
-        "spacing": 8,
-        "show-passive-items": false,
-    }
-},
 ]

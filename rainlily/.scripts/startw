@@ -1,8 +1,23 @@
 #!/bin/sh
 
-cd ~
-
+# Running stuff in Wayland mode
+export QT_QPA_PLATFORM="wayland;xcb"
+export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+export SDL_VIDEODRIVER=wayland
+export SDL_DYNAMIC_API=/usr/lib/libSDL2-2.0.so
 export _JAVA_AWT_WM_NONREPARENTING=1
-export XCURSOR_SIZE=24
+export ELECTRON_OZONE_PLATFORM_HINT=auto
 
-exec Hyprland
+# Theming options
+export XCURSOR_SIZE=24
+export QT_QPA_PLATFORMTHEME=gtk2
+
+# IME options
+export QT_IM_MODULE=fcitx
+
+# Terminal options
+export EDITOR=vim
+export MAKEOPTS=-j16
+export MAKEFLAGS=-j16
+
+dbus-run-session sway $@

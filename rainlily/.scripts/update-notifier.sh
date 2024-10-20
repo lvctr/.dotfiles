@@ -12,8 +12,6 @@ if ! updates_flatpak=$(flatpak update 2>/dev/null | tail -n +5 | grep -Ecv "^$|^
     updates_flatpak=0
 fi
 
-fwupdmgr refresh
-
 if ! updates_fw=$(fwupdmgr get-updates 2> /dev/null | grep -c "Updatable"); then
     updates_fw=0
 fi
