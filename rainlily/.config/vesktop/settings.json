@@ -3,5 +3,9 @@
     "discordBranch": "stable",
     "arRPC": "on",
     "splashColor": "rgb(147, 161, 161)",
-    "splashBackground": "rgb(0, 43, 54)"
+    "splashBackground": "rgb(0, 43, 54)",
+    "spellCheckLanguages": [
+        "en-GB",
+        "en"
+    ]
 }

@@ -1,8 +1,8 @@
-# DO NOT EDIT! This file will be overwritten by LXAppearance.
+# DO NOT EDIT! This file will be overwritten by nwg-look.
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
 include "/home/insti/.gtkrc-2.0.mine"
-gtk-theme-name="SolArc-Dark"
+gtk-theme-name="SolArc"
 gtk-icon-theme-name="Papirus-Dark"
 gtk-font-name="Source Han Code JP 10"
 gtk-cursor-theme-name="Simp1e-Solarized-Dark"

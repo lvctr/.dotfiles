@@ -29,7 +29,7 @@
             "enabled": false
         },
         "MessageAccessoriesAPI": {
-            "enabled": false
+            "enabled": true
         },
         "MessageDecorationsAPI": {
             "enabled": false
@@ -217,7 +217,7 @@
         "ImageZoom": {
             "enabled": true,
             "size": 100,
-            "zoom": 2.6,
+            "zoom": 1.9,
             "nearestNeighbour": false,
             "square": false,
             "saveZoomValues": true,
@@ -279,7 +279,7 @@
             "enabled": false
         },
         "NoBlockedMessages": {
-            "enabled": true,
+            "enabled": false,
             "ignoreBlockedMessages": false
         },
         "NoDefaultHangStatus": {
@@ -313,7 +313,7 @@
             "enabled": false
         },
         "NoUnblockToJump": {
-            "enabled": false
+            "enabled": true
         },
         "NormalizeMessageLinks": {
             "enabled": false
@@ -332,7 +332,11 @@
         },
         "OpenInApp": {
             "enabled": true,
-            "spotify": true
+            "spotify": true,
+            "steam": true,
+            "epic": true,
+            "tidal": true,
+            "itunes": true
         },
         "OverrideForumDefaults": {
             "enabled": false
@@ -365,9 +369,6 @@
             "enabled": false
         },
         "PreviewMessage": {
-            "enabled": false
-        },
-        "PronounDB": {
             "enabled": false
         },
         "QuickMention": {
@@ -406,9 +407,6 @@
         "RoleColorEverywhere": {
             "enabled": false
         },
-        "SearchReply": {
-            "enabled": false
-        },
         "SecretRingToneEnabler": {
             "enabled": false
         },
@@ -431,7 +429,10 @@
             "enabled": false
         },
         "ShowHiddenChannels": {
-            "enabled": false
+            "enabled": true,
+            "showMode": 0,
+            "hideUnreads": true,
+            "defaultAllowedUsersAndRolesDropdownState": true
         },
         "ShowHiddenThings": {
             "enabled": false
@@ -491,7 +492,9 @@
         },
         "TypingTweaks": {
             "enabled": true,
-            "alternativeFormatting": true
+            "alternativeFormatting": true,
+            "showRoleColors": true,
+            "showAvatars": true
         },
         "Unindent": {
             "enabled": false
@@ -538,9 +541,6 @@
         "VoiceMessages": {
             "enabled": false
         },
-        "WatchTogetherAdblock": {
-            "enabled": true
-        },
         "WebContextMenus": {
             "enabled": true,
             "addBack": true
@@ -574,6 +574,48 @@
         },
         "NoOnboardingDelay": {
             "enabled": false
+        },
+        "UserSettingsAPI": {
+            "enabled": true
+        },
+        "ConsoleJanitor": {
+            "enabled": false
+        },
+        "MentionAvatars": {
+            "enabled": false
+        },
+        "YoutubeAdblock": {
+            "enabled": true
+        },
+        "NoMaskedUrlPaste": {
+            "enabled": false
+        },
+        "AlwaysExpandRoles": {
+            "enabled": false
+        },
+        "CopyFileContents": {
+            "enabled": false
+        },
+        "StickerPaste": {
+            "enabled": false
+        },
+        "VolumeBooster": {
+            "enabled": false
+        },
+        "FullSearchContext": {
+            "enabled": false
+        },
+        "AccountPanelServerProfile": {
+            "enabled": false
+        },
+        "UserMessagesPronouns": {
+            "enabled": false
+        },
+        "DynamicImageModalAPI": {
+            "enabled": false
+        },
+        "FixImagesQuality": {
+            "enabled": false
         }
     },
     "notifications": {
@@ -586,6 +628,6 @@
         "authenticated": true,
         "url": "https://api.vencord.dev/",
         "settingsSync": true,
-        "settingsSyncVersion": 1717650309245
+        "settingsSyncVersion": 1730789793896
     }
 }

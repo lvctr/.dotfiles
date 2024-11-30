@@ -1,1 +1,2 @@
-smb://192.168.0.101/elderberry/Dump Dump
+file:///home/insti/Downloads
+smb://192.168.0.101/elderberry/Data

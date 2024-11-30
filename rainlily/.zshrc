@@ -60,6 +60,12 @@ bindkey -M menuselect '^[[Z' reverse-menu-complete
 alias :q="exit"
 alias :q!="exit"
 alias gotop="gotop --color=solarized"
+alias rebuild-qt-styles="yay -S qt5-styleplugins qt6gtk2 --rebuild"
+alias rebuild-mpv="yay -S mpv-full --rebuild"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Make Flags
+export MAKEFLAGS=-j16
+export MAKEOPTS=-j16
