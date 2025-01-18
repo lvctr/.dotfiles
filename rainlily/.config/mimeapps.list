@@ -1,14 +1,42 @@
 [Default Applications]
-inode/directory=thunar.desktop
+inode/directory=pcmanfm.desktop
 image/png=viewnior.desktop
 application/zip=xarchiver.desktop
 video/x-matroska=vlc.desktop
+text/html=firefox.desktop
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
+x-scheme-handler/about=librewolf.desktop
+x-scheme-handler/unknown=librewolf.desktop
 x-scheme-handler/discord-409416265891971072=discord-409416265891971072.desktop
+x-scheme-handler/chrome=firefox.desktop
+application/x-extension-htm=firefox.desktop
+application/x-extension-html=firefox.desktop
+application/x-extension-shtml=firefox.desktop
+application/xhtml+xml=firefox.desktop
+application/x-extension-xhtml=firefox.desktop
+application/x-extension-xht=firefox.desktop
 
 [Added Associations]
-video/x-matroska=svp-manager4.desktop;vlc.desktop;
-application/zip=xarchiver.desktop;mcomix.desktop;
-image/png=google-chrome.desktop;viewnior.desktop;
+video/x-matroska=svp-manager4.desktop;io.github.celluloid_player.Celluloid.desktop;vlc.desktop;
+application/zip=engrampa.desktop;xarchiver.desktop;mcomix.desktop;
+image/png=mcomix.desktop;viewnior.desktop;
 text/plain=sublime_text.desktop;
+text/x-chdr=sublime_text.desktop;
+text/x-csrc=sublime_text.desktop;code.desktop;
 application/x-shellscript=sublime_text.desktop;
+text/x-makefile=sublime_text.desktop;
 image/jpeg=viewnior.desktop;
+video/mp4=vlc.desktop;
+video/x-ms-wmv=vlc.desktop;
+image/webp=gimp.desktop;
+x-scheme-handler/http=firefox.desktop;
+x-scheme-handler/https=firefox.desktop;
+x-scheme-handler/chrome=firefox.desktop;
+text/html=firefox.desktop;
+application/x-extension-htm=firefox.desktop;
+application/x-extension-html=firefox.desktop;
+application/x-extension-shtml=firefox.desktop;
+application/xhtml+xml=firefox.desktop;
+application/x-extension-xhtml=firefox.desktop;
+application/x-extension-xht=firefox.desktop;

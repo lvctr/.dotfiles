@@ -176,7 +176,7 @@
             "enabled": false
         },
         "FixCodeblockGap": {
-            "enabled": false
+            "enabled": true
         },
         "FixSpotifyEmbeds": {
             "enabled": false
@@ -217,7 +217,7 @@
         "ImageZoom": {
             "enabled": true,
             "size": 100,
-            "zoom": 1.9,
+            "zoom": 4.3,
             "nearestNeighbour": false,
             "square": false,
             "saveZoomValues": true,
@@ -273,13 +273,13 @@
             "enabled": false
         },
         "MutualGroupDMs": {
-            "enabled": false
+            "enabled": true
         },
         "NewGuildSettings": {
             "enabled": false
         },
         "NoBlockedMessages": {
-            "enabled": false,
+            "enabled": true,
             "ignoreBlockedMessages": false
         },
         "NoDefaultHangStatus": {
@@ -564,7 +564,7 @@
             "enabled": false
         },
         "ServerInfo": {
-            "enabled": false
+            "enabled": true
         },
         "AppleMusicRichPresence": {
             "enabled": false
@@ -612,9 +612,12 @@
             "enabled": false
         },
         "DynamicImageModalAPI": {
-            "enabled": false
+            "enabled": true
         },
         "FixImagesQuality": {
+            "enabled": false
+        },
+        "FullUserInChatbox": {
             "enabled": false
         }
     },
@@ -628,6 +631,6 @@
         "authenticated": true,
         "url": "https://api.vencord.dev/",
         "settingsSync": true,
-        "settingsSyncVersion": 1730789793896
+        "settingsSyncVersion": 1736747474852
     }
 }

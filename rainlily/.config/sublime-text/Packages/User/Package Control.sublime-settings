@@ -2,6 +2,7 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
+		"Theme - Monokai Pro",
 	],
 	"installed_packages":
 	[
@@ -16,7 +17,7 @@
 		"Materialize",
 		"Package Control",
 		"RichTextFormat",
-		"SCSS",
+		"Sass",
 		"Theme - Monokai Pro",
 		"Theme - Solarized Flat",
 	],
