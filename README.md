@@ -4,9 +4,9 @@ Hello and welcome to my dotfiles repo.
 This is mainly just for me so that I have a documentation of everything I use, but feel free to grab whatever you want from here.
 
 ### SPECS
-|  | RAINLILY | WATERLILY | WINTERBERRY
+|  | RAINLILY | WATERLILY
 |--|--|--|--|
-| **Class** | Desktop | Laptop | Laptop
+| **Class** | Desktop | Laptop
 | **Host** | GIGABYTE AORUS X570 | Lenovo ThinkPad X1 Carbon Gen 12
 | **OS** | Arch Linux/Windows | Arch Linux/Windows
 | **CPU** | AMD Ryzen 7 5800X | Intel Core Ultra 7 155U
