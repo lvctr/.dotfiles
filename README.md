@@ -7,14 +7,13 @@ This is mainly just for me so that I have a documentation of everything I use, b
 |  | RAINLILY | WATERLILY | WINTERBERRY
 |--|--|--|--|
 | **Class** | Desktop | Laptop | Laptop
-| **Host** | ASUS ROG STRIX X470-F | Lenovo ThinkPad T480s | Dell XPS 13 9360
-| **OS** | Arch Linux (VFIO Windows) | Arch Linux/Windows | Arch Linux
-| **CPU** | AMD Ryzen 7 5800X | Intel Core i7-8650U vPro | Intel Core i5-7200U
-| **Host GPU** | AMD Radeon RX 5500 XT | Intel HD Graphics 620 | Intel HD Graphics 620
-| **Guest GPU** | Nvidia GeForce RTX 3070Ti | |
-| **RAM** | 32GB DDR4-3200 | 24GB DDR4-2400 | 8GB DDR3-1866
-| **SSD1** | Kioxia Exceria Pro 1TB (Linux) | Intel 500GB (Linux) | SK Hynix 250GB
-| **SSD2** | Kioxia Exceria Pro 2TB (Windows) | WD SN520 256GB (Windows)
+| **Host** | GIGABYTE AORUS X570 | Lenovo ThinkPad X1 Carbon Gen 12
+| **OS** | Arch Linux/Windows | Arch Linux/Windows
+| **CPU** | AMD Ryzen 7 5800X | Intel Core Ultra 7 155U
+| **Host GPU** | AMD Radeon RX 5500 XT | Intel Arc Xe-LPG 64EU
+| **Guest GPU** | Nvidia GeForce RTX 4080 | 
+| **RAM** | 64GB DDR4-3200 | 32GB DDR5-6400
+| **SSD1** | Kioxia Exceria Pro 2TB | Kioxia Exceria Pro 1TB
 
 ## ENVIRONMENT
 
@@ -66,15 +65,3 @@ and manage devices with `pavucontrol` for PulseAudio and `qjackctl` for JACK.
 - `openrgb-bin` for RGB control
 - `earlyoom` for OOM management
 - `tlp` and `tlpui` for battery management
-
-### VFIO
-
-In order to play video games and use Photoshop on my system, I have my guest GPU passed through to a Windows VM.
-
-||||
-|--|--|--|
-| **environment** | - | qemu/kvm managed with `virt-manager` |
-| **video** | `looking-glass` ||
-| **audio**| - |  |
-
-This part of the document is incomplete.
