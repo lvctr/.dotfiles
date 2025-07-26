@@ -5,13 +5,12 @@ This is mainly just for me so that I have a documentation of everything I use, b
 
 ### SPECS
 |  | RAINLILY | WATERLILY
-|--|--|--|--|
+|--|--|--|
 | **Class** | Desktop | Laptop
 | **Host** | GIGABYTE AORUS X570 | Lenovo ThinkPad X1 Carbon Gen 12
 | **OS** | Arch Linux/Windows | Arch Linux/Windows
 | **CPU** | AMD Ryzen 7 5800X | Intel Core Ultra 7 155U
-| **Host GPU** | AMD Radeon RX 5500 XT | Intel Arc Xe-LPG 64EU
-| **Guest GPU** | Nvidia GeForce RTX 4080 | 
+| **Host GPU** | Nvidia GeForce RTX 4080 | Intel Arc Xe-LPG 64EU
 | **RAM** | 64GB DDR4-3200 | 32GB DDR5-6400
 | **SSD1** | Kioxia Exceria Pro 2TB | Kioxia Exceria Pro 1TB
 
