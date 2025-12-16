@@ -7,13 +7,12 @@ This is mainly just for me so that I have a documentation of everything I use, b
 |  | RAINLILY | WATERLILY | BLOODLILY
 |--|--|--|--|
 | **Class** | Desktop | Laptop | Laptop
-| **Host** | GIGABYTE AORUS X570 | Lenovo ThinkPad X1 Carbon Gen 12 | Lenovo ThinkPad T480s
+| **Host** | GIGABYTE AORUS X570 | Lenovo ThinkPad X1 Carbon Gen 12 | Lenovo ThinkPad T480s (Libreboot)
 | **OS** | Arch Linux/Windows | Arch Linux/Windows | Arch Linux/Fedora Kinoite
 | **CPU** | AMD Ryzen 7 5800X | Intel Core Ultra 7 155U | Intel Core i7-8650U
 | **Host GPU** | Nvidia GeForce RTX 4080 | Intel Arc Xe-LPG 64EU | Intel HD 620
 | **RAM** | 64GB DDR4-3200 | 32GB DDR5-6400 | 24GB DDR4-2400
 | **SSD1** | Kioxia Exceria Pro 2TB | Kioxia Exceria Pro 1TB | SK Hynix 256 GB
-| **BIOS** | Default | Default | Libreboot
 
 ## ENVIRONMENT
 
